@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #0F0F1A;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #F3F4F6;
+    font-size: 2rem;
+    text-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+/* Stats Card */
+.stats-card {
+    background: #1A1A2E;
+    border: 1px solid #2D2D44;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.level-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.level-display .label {
+    font-size: 1.2rem;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+.level-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FBBF24;
+}
+
+.xp-section {
+    margin-top: 10px;
+}
+
+.xp-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.xp-header .label {
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+.xp-text {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+.xp-bar {
+    height: 12px;
+    background: #1F2937;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.xp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10B981, #22C55E);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    width: 0%;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Lessons Section */
+.lessons-section {
+    background: #1A1A2E;
+    border: 1px solid #2D2D44;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.lessons-section h2 {
+    color: #F3F4F6;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+}
+
+.lesson-btn {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: #2D2D44;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    margin-bottom: 12px;
+}
+
+.lesson-btn:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-btn:hover {
+    transform: translateY(-2px);
+    background: #7C3AED;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.lesson-icon {
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+.lesson-title {
+    flex: 1;
+    font-weight: 500;
+    color: #F3F4F6;
+}
+
+.lesson-xp {
+    color: #FBBF24;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Lesson Page Styles */
+.lesson-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    color: #F3F4F6;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 16px;
+}
+
+.lesson-header h1 {
+    color: #F3F4F6;
+    font-size: 1.5rem;
+}
+
+.question-card {
+    background: #1A1A2E;
+    border: 1px solid #2D2D44;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.progress-text {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.question-text {
+    font-size: 1.4rem;
+    color: #F3F4F6;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 16px 20px;
+    border: 2px solid #2D2D44;
+    border-radius: 12px;
+    background: #0F0F1A;
+    color: #F3F4F6;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: #7C3AED;
+    background: #2D2D44;
+}
+
+.option-btn.correct {
+    border-color: #22C55E;
+    background: rgba(34, 197, 94, 0.2);
+    color: #22C55E;
+}
+
+.option-btn.incorrect {
+    border-color: #EF4444;
+    background: rgba(239, 68, 68, 0.2);
+    color: #EF4444;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Completion Screen */
+.completion-card {
+    background: #1A1A2E;
+    border: 1px solid #2D2D44;
+    border-radius: 16px;
+    padding: 40px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.completion-card .icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.completion-card h2 {
+    color: #F3F4F6;
+    margin-bottom: 8px;
+}
+
+.completion-card .xp-earned {
+    color: #FBBF24;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+.completion-card .home-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #7C3AED;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.completion-card .home-btn:hover {
+    transform: translateY(-2px);
+    background: #9333EA;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.5);
+}
+
+.hidden {
+    display: none;
+}

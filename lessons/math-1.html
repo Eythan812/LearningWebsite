@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Addition - Mindly</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-header">
+            <a href="../index.html" class="back-btn">←</a>
+            <h1>Basic Addition</h1>
+        </div>
+
+        <!-- Question Card -->
+        <div class="question-card" id="question-card">
+            <p class="progress-text" id="progress">Question 1 of 3</p>
+            <h2 class="question-text" id="question-text"></h2>
+            <div class="options" id="options"></div>
+        </div>
+
+        <!-- Completion Card (hidden initially) -->
+        <div class="completion-card hidden" id="completion-card">
+            <div class="icon">🎉</div>
+            <h2>Lesson Complete!</h2>
+            <p id="score"></p>
+            <p class="xp-earned" id="xp-earned">+10 XP</p>
+            <a href="../index.html" class="home-btn">Continue</a>
+        </div>
+    </div>
+
+    <!-- Load app.js first for XP system -->
+    <script src="../js/app.js"></script>
+    <script src="../js/lessons.js"></script>
+    
+    <script>
+        // ===========================================
+        // RANDOM MATH QUESTION GENERATOR
+        // ===========================================
+        
+        const LESSON_ID = "math-1";
+        const LESSON_TITLE = "Basic Math";
+        const NUM_QUESTIONS = 3;
+        const NUM_OPTIONS = 4;
+
+        // Operators with display symbols and functions
+        const operators = [
+            { symbol: '+', calc: (a, b) => a + b },
+            { symbol: '−', calc: (a, b) => a - b },
+            { symbol: '×', calc: (a, b) => a * b },
+            { symbol: '÷', calc: (a, b) => a / b }
+        ];
+
+        // Generate a random integer between min and max (inclusive)
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Shuffle an array (Fisher-Yates)
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Generate a single random question
+        function generateQuestion() {
+            const op = operators[randomInt(0, operators.length - 1)];
+            let num1, num2, answer;
+
+            // Handle division specially to get clean answers
+            if (op.symbol === '÷') {
+                // Generate a clean division: answer * num2 = num1
+                answer = randomInt(1, 10);
+                num2 = randomInt(1, 10);
+                num1 = answer * num2;
+            } else if (op.symbol === '−') {
+                // Ensure no negative answers
+                num1 = randomInt(5, 20);
+                num2 = randomInt(1, num1);
+                answer = op.calc(num1, num2);
+            } else {
+                num1 = randomInt(1, 12);
+                num2 = randomInt(1, 12);
+                answer = op.calc(num1, num2);
+            }
+
+            // Generate distractor options (wrong answers)
+            const options = new Set([answer]);
+            while (options.size < NUM_OPTIONS) {
+                // Create distractors close to the real answer
+                const offset = randomInt(-5, 5);
+                const distractor = answer + offset;
+                if (distractor !== answer && distractor >= 0) {
+                    options.add(distractor);
+                }
+            }
+
+            // Convert to array and shuffle
+            const shuffledOptions = shuffle([...options]);
+            const correctIndex = shuffledOptions.indexOf(answer);
+
+            return {
+                question: `What is ${num1} ${op.symbol} ${num2}?`,
+                options: shuffledOptions.map(String),
+                correct: correctIndex
+            };
+        }
+
+        // Generate all questions for the lesson
+        function generateLessonData() {
+            const questions = [];
+            for (let i = 0; i < NUM_QUESTIONS; i++) {
+                questions.push(generateQuestion());
+            }
+            return {
+                id: LESSON_ID,
+                title: LESSON_TITLE,
+                questions: questions
+            };
+        }
+
+        // Initialize the lesson with randomly generated questions
+        document.addEventListener('DOMContentLoaded', () => {
+            const lessonData = generateLessonData();
+            initLesson(lessonData);
+        });
+    </script>
+</body>
+</html>

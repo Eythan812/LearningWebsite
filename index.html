@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindly</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Mindly</h1>
+        </header>
+
+        <section class="stats-card">
+            <div class="level-display">
+                <span class="label">Level</span>
+                <span class="level-number" id="level">1</span>
+            </div>
+            
+            <div class="xp-section">
+                <div class="xp-header">
+                    <span class="label">XP</span>
+                    <span class="xp-text" id="xp-text">0 / 30</span>
+                </div>
+                <div class="xp-bar">
+                    <div class="xp-fill" id="xp-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lessons-section">
+            <h2>Lessons</h2>
+            <a href="lessons/math-1.html" class="lesson-btn">
+                <span class="lesson-icon">➕</span>
+                <span class="lesson-title">Basic Addition</span>
+                <span class="lesson-xp">+10 XP</span>
+            </a>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
