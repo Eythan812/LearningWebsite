@@ -8,37 +8,294 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🎓 Mindly</h1>
-        </header>
-
-        <section class="stats-card">
-            <div class="level-display">
-                <span class="label">Level</span>
-                <span class="level-number" id="level">1</span>
-            </div>
-            
-            <div class="xp-section">
-                <div class="xp-header">
-                    <span class="label">XP</span>
-                    <span class="xp-text" id="xp-text">0 / 30</span>
+        
+        <!-- ========== MAIN MENU ========== -->
+        <div id="main-menu">
+            <!-- Header with logo and streak -->
+            <header class="main-header">
+                <div class="logo-section">
+                    <span class="logo-icon">🎮</span>
+                    <div class="logo-text">
+                        <h1>Mindly</h1>
+                        <span class="tagline">Level up your brain</span>
+                    </div>
                 </div>
-                <div class="xp-bar">
-                    <div class="xp-fill" id="xp-fill"></div>
+                <div class="streak-badge">
+                    <span class="streak-icon">🔥</span>
+                    <span class="streak-count" id="streak">0</span>
+                </div>
+            </header>
+
+            <!-- Player Stats Card - Stretched -->
+            <section class="player-card">
+                <div class="player-top">
+                <div class="avatar">
+                        <img src="images/pfp.png" alt="Profile" onerror="this.src='images/pfp.jpg'">
+                    </div>
+                    <div class="player-details">
+                        <span class="player-title">Apprentice</span>
+                        <div class="level-badge">
+                            <span class="level-icon">⭐</span>
+                            <span>Level <span id="level">1</span></span>
+                        </div>
+                    </div>
+                    <div class="player-rank">
+                        <span class="rank-label">Rank</span>
+                        <span class="rank-value">#1</span>
+                    </div>
+                </div>
+                <div class="player-middle">
+                    <div class="xp-container">
+                        <div class="xp-info">
+                            <span class="xp-label">Experience Points</span>
+                            <span class="xp-text" id="xp-text">0 / 30 XP</span>
+                        </div>
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xp-fill"></div>
+                        </div>
+                        <span class="xp-hint">+30 XP to next level</span>
+                    </div>
+                </div>
+                <div class="player-badges">
+                    <div class="badge-item">
+                        <span class="badge-icon">🌟</span>
+                        <span class="badge-name">Starter</span>
+                    </div>
+                    <div class="badge-item locked">
+                        <span class="badge-icon">🔒</span>
+                        <span class="badge-name">Scholar</span>
+                    </div>
+                    <div class="badge-item locked">
+                        <span class="badge-icon">🔒</span>
+                        <span class="badge-name">Master</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Row: Stats Left, Play Right -->
+            <div class="bottom-row">
+                <!-- Quick Stats - Left Side -->
+                <section class="quick-stats">
+                    <h3 class="stats-title">📊 Stats</h3>
+                    <div class="stat-box">
+                        <span class="stat-icon">⚡</span>
+                        <div class="stat-content">
+                            <span class="stat-value" id="total-xp">0</span>
+                            <span class="stat-label">Total XP</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-icon">✅</span>
+                        <div class="stat-content">
+                            <span class="stat-value" id="questions-answered">0</span>
+                            <span class="stat-label">Answered</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-icon">🎯</span>
+                        <div class="stat-content">
+                            <span class="stat-value" id="accuracy">0%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Play Section - Right Side -->
+                <section class="play-section">
+                    <h3 class="play-title">🎮 Play</h3>
+                    <button class="play-card" onclick="startLesson()">
+                        <div class="play-icon-wrapper">
+                            <span class="play-icon">▶</span>
+                        </div>
+                        <div class="play-info">
+                            <span class="play-name">Basic Math</span>
+                            <span class="play-desc">+, −, ×, ÷</span>
+                        </div>
+                        <div class="play-meta">
+                            <span class="meta-questions">3 Q</span>
+                            <span class="meta-xp">+5 XP</span>
+                        </div>
+                    </button>
+                    <div class="play-hint">
+                        <span>Tap to start learning!</span>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="menu-footer">
+                <span>Keep learning, keep growing 🌱</span>
+            </footer>
+        </div>
+
+        <!-- ========== LESSON SCREEN ========== -->
+        <div id="lesson-screen" class="hidden">
+            <div class="lesson-header">
+                <button class="back-btn" onclick="returnToMenu()">←</button>
+                <h1>Basic Math</h1>
+                <div class="header-stats">
+                    <span class="header-level">Lv.<span id="lesson-level">1</span></span>
+                    <div class="header-xp-bar">
+                        <div class="xp-fill" id="lesson-xp-fill"></div>
+                    </div>
+                    <span class="header-xp" id="lesson-xp-text">0/30</span>
                 </div>
             </div>
-        </section>
 
-        <section class="lessons-section">
-            <h2>Lessons</h2>
-            <a href="lessons/math-1.html" class="lesson-btn">
-                <span class="lesson-icon">➕</span>
-                <span class="lesson-title">Basic Addition</span>
-                <span class="lesson-xp">+10 XP</span>
-            </a>
-        </section>
+            <!-- Question Card -->
+            <div class="question-card" id="question-card">
+                <p class="progress-text" id="progress">Question 1 of 3</p>
+                <h2 class="question-text" id="question-text"></h2>
+                <div class="options" id="options"></div>
+            </div>
+
+            <!-- Completion Card -->
+            <div class="completion-card hidden" id="completion-card">
+                <div class="icon">🎉</div>
+                <h2>Lesson Complete!</h2>
+                <p id="score"></p>
+                <p class="xp-earned" id="xp-earned">+0 XP</p>
+                <button class="home-btn" onclick="returnToMenu()">Continue</button>
+            </div>
+        </div>
+
     </div>
 
     <script src="js/app.js"></script>
+    <script src="js/lessons.js"></script>
+    <script>
+        // ===========================================
+        // LESSON CONFIGURATION
+        // ===========================================
+        const NUM_QUESTIONS = 3;
+        const NUM_OPTIONS = 4;
+
+        // Operators with display symbols and functions
+        const operators = [
+            { symbol: '+', calc: (a, b) => a + b },
+            { symbol: '−', calc: (a, b) => a - b },
+            { symbol: '×', calc: (a, b) => a * b },
+            { symbol: '÷', calc: (a, b) => a / b }
+        ];
+
+        // ===========================================
+        // HELPER FUNCTIONS
+        // ===========================================
+        
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // ===========================================
+        // QUESTION GENERATOR
+        // ===========================================
+        
+        function generateQuestion() {
+            const op = operators[randomInt(0, operators.length - 1)];
+            let num1, num2, answer;
+
+            if (op.symbol === '÷') {
+                answer = randomInt(1, 10);
+                num2 = randomInt(1, 10);
+                num1 = answer * num2;
+            } else if (op.symbol === '−') {
+                num1 = randomInt(5, 20);
+                num2 = randomInt(1, num1);
+                answer = op.calc(num1, num2);
+            } else {
+                num1 = randomInt(1, 12);
+                num2 = randomInt(1, 12);
+                answer = op.calc(num1, num2);
+            }
+
+            const options = new Set([answer]);
+            while (options.size < NUM_OPTIONS) {
+                const offset = randomInt(-5, 5);
+                const distractor = answer + offset;
+                if (distractor !== answer && distractor >= 0) {
+                    options.add(distractor);
+                }
+            }
+
+            const shuffledOptions = shuffle([...options]);
+            return {
+                question: `What is ${num1} ${op.symbol} ${num2}?`,
+                options: shuffledOptions.map(String),
+                correct: shuffledOptions.indexOf(answer)
+            };
+        }
+
+        function generateLessonData() {
+            const questions = [];
+            for (let i = 0; i < NUM_QUESTIONS; i++) {
+                questions.push(generateQuestion());
+            }
+            return {
+                id: "math-1",
+                title: "Basic Math",
+                questions: questions
+            };
+        }
+
+        // ===========================================
+        // SCREEN NAVIGATION
+        // ===========================================
+        
+        function startLesson() {
+            // Hide menu, show lesson
+            document.getElementById('main-menu').classList.add('hidden');
+            document.getElementById('lesson-screen').classList.remove('hidden');
+            document.getElementById('question-card').classList.remove('hidden');
+            document.getElementById('completion-card').classList.add('hidden');
+            
+            // Update lesson screen stats
+            updateLessonStats();
+            
+            // Generate and start lesson
+            const lessonData = generateLessonData();
+            initLesson(lessonData);
+        }
+
+        function returnToMenu() {
+            // Hide lesson, show menu
+            document.getElementById('lesson-screen').classList.add('hidden');
+            document.getElementById('main-menu').classList.remove('hidden');
+            
+            // Update main menu stats
+            updateStatsDisplay();
+        }
+
+        // Update stats display on lesson screen
+        function updateLessonStats() {
+            const xp = getXP();
+            const level = getLevel(xp);
+            const xpInLevel = getXPInCurrentLevel(xp);
+            const xpPercent = (xpInLevel / XP_PER_LEVEL) * 100;
+
+            const levelEl = document.getElementById('lesson-level');
+            const xpTextEl = document.getElementById('lesson-xp-text');
+            const xpFillEl = document.getElementById('lesson-xp-fill');
+
+            if (levelEl) levelEl.textContent = level;
+            if (xpTextEl) xpTextEl.textContent = `${xpInLevel}/${XP_PER_LEVEL}`;
+            if (xpFillEl) xpFillEl.style.width = `${xpPercent}%`;
+        }
+
+        // Override the default XP award to also update lesson stats
+        const originalAwardXP = awardCorrectAnswerXP;
+        awardCorrectAnswerXP = function() {
+            const result = originalAwardXP();
+            updateLessonStats();
+            return result;
+        };
+    </script>
 </body>
 </html>

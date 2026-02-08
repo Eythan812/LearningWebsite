@@ -60,10 +60,12 @@ function selectAnswer(selectedIndex, lessonData) {
         }
     });
     
-    // Track if answer was correct
-    if (selectedIndex === question.correct) {
+    // Track answer and award XP if correct
+    const isCorrect = selectedIndex === question.correct;
+    if (isCorrect) {
         correctAnswers++;
     }
+    recordAnswer(isCorrect);
     
     // Move to next question after a delay
     setTimeout(() => {
@@ -85,17 +87,16 @@ function showCompletion(lessonData) {
     if (questionCard) questionCard.classList.add('hidden');
     if (completionCard) completionCard.classList.remove('hidden');
     
-    // Award XP for completing the lesson
-    const xpAwarded = completeLesson(lessonData.id);
+    // Increment streak for completing a lesson
+    incrementStreak();
+    
+    // Calculate XP earned this session
+    const xpEarned = correctAnswers * XP_PER_CORRECT;
     
     // Update completion message
     const xpEarnedElement = document.getElementById('xp-earned');
     if (xpEarnedElement) {
-        if (xpAwarded) {
-            xpEarnedElement.textContent = `+${XP_PER_LESSON} XP`;
-        } else {
-            xpEarnedElement.textContent = 'Already completed';
-        }
+        xpEarnedElement.textContent = `+${xpEarned} XP`;
     }
     
     // Show score
