@@ -3,11 +3,13 @@
 
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
+let currentLessonDataRef = null; // Store reference to current lesson for OK button
 
 // Initialize the lesson quiz
 function initLesson(lessonData) {
     currentQuestionIndex = 0;
     correctAnswers = 0;
+    currentLessonDataRef = lessonData;
     showQuestion(lessonData);
 }
 
@@ -15,6 +17,12 @@ function initLesson(lessonData) {
 function showQuestion(lessonData) {
     const question = lessonData.questions[currentQuestionIndex];
     const totalQuestions = lessonData.questions.length;
+    
+    // Hide explanation container when showing new question
+    const explanationContainer = document.getElementById('explanation-container');
+    if (explanationContainer) {
+        explanationContainer.classList.add('hidden');
+    }
     
     // Update progress text
     const progressElement = document.getElementById('progress');
@@ -40,6 +48,48 @@ function showQuestion(lessonData) {
             button.onclick = () => selectAnswer(index, lessonData);
             optionsContainer.appendChild(button);
         });
+    }
+}
+
+// Show explanation and OK button (for Learn/Fun modes)
+function showExplanation(question, isCorrect) {
+    const explanationContainer = document.getElementById('explanation-container');
+    const explanationText = document.getElementById('explanation-text');
+    const explanationIcon = document.getElementById('explanation-icon');
+    const explanationBox = document.getElementById('explanation-box');
+    
+    if (explanationContainer && explanationText) {
+        // Set the explanation text
+        const explanation = question.explanation || "Bonne question!";
+        explanationText.textContent = explanation;
+        
+        // Update icon and style based on correct/incorrect
+        if (explanationIcon) {
+            explanationIcon.textContent = isCorrect ? '✅' : '💡';
+        }
+        if (explanationBox) {
+            explanationBox.classList.remove('correct-explanation', 'incorrect-explanation');
+            explanationBox.classList.add(isCorrect ? 'correct-explanation' : 'incorrect-explanation');
+        }
+        
+        // Show the container
+        explanationContainer.classList.remove('hidden');
+    }
+}
+
+// Handle OK button click to go to next question (Learn/Fun modes)
+function nextQuestionManual() {
+    const explanationContainer = document.getElementById('explanation-container');
+    if (explanationContainer) {
+        explanationContainer.classList.add('hidden');
+    }
+    
+    currentQuestionIndex++;
+    
+    if (currentQuestionIndex < currentLessonDataRef.questions.length) {
+        showQuestion(currentLessonDataRef);
+    } else {
+        showCompletion(currentLessonDataRef);
     }
 }
 
@@ -90,20 +140,31 @@ function selectAnswer(selectedIndex, lessonData) {
     }
     recordAnswer(isCorrect);
     
-    // Move to next question after a delay
-    setTimeout(() => {
-        currentQuestionIndex++;
-        
-        if (currentQuestionIndex < lessonData.questions.length) {
-            // Speedrun: Reset timer for next question (with less time!)
-            if (typeof currentMode !== 'undefined' && currentMode === 'speedrun') {
-                nextSpeedrunQuestion();
+    // Check if we should show explanation with OK button (Learn/Fun modes)
+    const showExplanationMode = typeof currentMode !== 'undefined' && 
+        (currentMode === 'learn' || currentMode === 'fun');
+    
+    if (showExplanationMode) {
+        // Show explanation and wait for OK button
+        setTimeout(() => {
+            showExplanation(question, isCorrect);
+        }, 500);
+    } else {
+        // Auto-advance for Speedrun and Challenge modes
+        setTimeout(() => {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < lessonData.questions.length) {
+                // Speedrun: Reset timer for next question (with less time!)
+                if (typeof currentMode !== 'undefined' && currentMode === 'speedrun') {
+                    nextSpeedrunQuestion();
+                }
+                showQuestion(lessonData);
+            } else {
+                showCompletion(lessonData);
             }
-            showQuestion(lessonData);
-        } else {
-            showCompletion(lessonData);
-        }
-    }, 1000);
+        }, 1000);
+    }
 }
 
 // Show the completion screen
