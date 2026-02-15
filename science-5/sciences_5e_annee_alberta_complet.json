@@ -1,0 +1,1742 @@
+{
+  "metadata": {
+    "title": "Sciences 5e année Alberta - Programme d'études 2023 - Quiz complet",
+    "title_en": "Alberta Grade 5 Science - 2023 Curriculum - Complete Quiz Data",
+    "province": "Alberta",
+    "grade": 5,
+    "program": "French Immersion",
+    "curriculum_year": "2023",
+    "language": "Français",
+    "note": "In Alberta French Immersion, Science is taught entirely in French. The curriculum content is identical to the English program (Alberta Education Programs of Study are the same regardless of language of instruction). All questions are in French with English translations for developer reference.",
+    "total_questions": 210,
+    "last_updated": "2025-02-14"
+  },
+  "units": [
+    {
+      "unit_id": "matiere",
+      "unit_name": "La matière",
+      "unit_name_en": "Matter",
+      "organizing_idea": "Les élèves étudient le modèle particulaire de la matière en relation avec les propriétés physiques des solides, des liquides et des gaz.",
+      "organizing_idea_en": "Students investigate the particle model of matter in relation to the physical properties of solids, liquids, and gases.",
+      "key_topics": [
+        "Modèle particulaire de la matière",
+        "Représentation des solides, liquides et gaz avec le modèle particulaire",
+        "Mouvement et arrangement des particules selon l'état",
+        "Forces attractives entre les particules",
+        "Mesure de la masse avec une balance et unités SI",
+        "Mesure du volume des liquides avec instruments appropriés et unités SI",
+        "Comparaison de la densité des solides (même volume)",
+        "Comparaison de la densité des liquides",
+        "Lien entre densité et modèle particulaire",
+        "Compressibilité de l'air et de l'eau",
+        "Sécurité et utilisation appropriée du matériel de laboratoire"
+      ],
+      "questions": [
+        {
+          "id": "mat_001",
+          "question": "Selon le modèle particulaire, comment les particules sont-elles arrangées dans un solide?",
+          "question_en": "According to the particle model, how are particles arranged in a solid?",
+          "choices": [
+            { "label": "A", "text": "Elles sont très éloignées et bougent librement" },
+            { "label": "B", "text": "Elles sont très proches les unes des autres et vibrent sur place" },
+            { "label": "C", "text": "Elles n'existent pas dans un solide" },
+            { "label": "D", "text": "Elles sont proches mais glissent les unes sur les autres" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Dans un solide, les particules sont très rapprochées, bien organisées et vibrent sur place sans se déplacer librement."
+        },
+        {
+          "id": "mat_002",
+          "question": "Comment les particules se comportent-elles dans un liquide?",
+          "question_en": "How do particles behave in a liquid?",
+          "choices": [
+            { "label": "A", "text": "Elles sont fixes et ne bougent pas" },
+            { "label": "B", "text": "Elles sont très éloignées et bougent très vite" },
+            { "label": "C", "text": "Elles sont proches mais peuvent glisser les unes sur les autres" },
+            { "label": "D", "text": "Elles disparaissent" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Dans un liquide, les particules sont proches mais pas aussi organisées que dans un solide. Elles peuvent glisser les unes sur les autres, ce qui permet au liquide de couler."
+        },
+        {
+          "id": "mat_003",
+          "question": "Comment les particules d'un gaz sont-elles arrangées selon le modèle particulaire?",
+          "question_en": "How are gas particles arranged according to the particle model?",
+          "choices": [
+            { "label": "A", "text": "Très proches et organisées en rangées" },
+            { "label": "B", "text": "Proches et glissantes" },
+            { "label": "C", "text": "Très éloignées les unes des autres et se déplacent rapidement dans toutes les directions" },
+            { "label": "D", "text": "Elles ne bougent pas du tout" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Dans un gaz, les particules sont très éloignées les unes des autres et se déplacent rapidement dans toutes les directions."
+        },
+        {
+          "id": "mat_004",
+          "question": "Quel est l'effet des forces attractives sur les particules d'un solide?",
+          "question_en": "What is the effect of attractive forces on particles in a solid?",
+          "choices": [
+            { "label": "A", "text": "Les forces attractives sont très faibles, les particules bougent librement" },
+            { "label": "B", "text": "Les forces attractives sont très fortes, gardant les particules ensemble et en place" },
+            { "label": "C", "text": "Il n'y a pas de forces attractives dans un solide" },
+            { "label": "D", "text": "Les forces repoussent les particules" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Dans un solide, les forces attractives entre les particules sont très fortes, ce qui les maintient en place et donne au solide sa forme fixe."
+        },
+        {
+          "id": "mat_005",
+          "question": "Dans quel état de la matière les forces attractives entre les particules sont-elles les plus faibles?",
+          "question_en": "In which state of matter are the attractive forces between particles the weakest?",
+          "choices": [
+            { "label": "A", "text": "Solide" },
+            { "label": "B", "text": "Liquide" },
+            { "label": "C", "text": "Gaz" },
+            { "label": "D", "text": "Les forces sont les mêmes dans tous les états" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Dans un gaz, les forces attractives entre les particules sont les plus faibles, c'est pourquoi les particules sont très éloignées et se déplacent librement."
+        },
+        {
+          "id": "mat_006",
+          "question": "Quel instrument utilise-t-on pour mesurer la masse d'un objet en sciences?",
+          "question_en": "What instrument is used to measure the mass of an object in science?",
+          "choices": [
+            { "label": "A", "text": "Un thermomètre" },
+            { "label": "B", "text": "Un cylindre gradué" },
+            { "label": "C", "text": "Une balance" },
+            { "label": "D", "text": "Un mètre" }
+          ],
+          "correct_answer": "C",
+          "explanation": "On utilise une balance pour mesurer la masse des solides et des liquides."
+        },
+        {
+          "id": "mat_007",
+          "question": "Quelle est l'unité SI standard pour mesurer la masse?",
+          "question_en": "What is the standard SI unit for measuring mass?",
+          "choices": [
+            { "label": "A", "text": "Le litre (L)" },
+            { "label": "B", "text": "Le mètre (m)" },
+            { "label": "C", "text": "Le gramme (g) ou le kilogramme (kg)" },
+            { "label": "D", "text": "Le degré Celsius (°C)" }
+          ],
+          "correct_answer": "C",
+          "explanation": "L'unité SI pour la masse est le gramme (g) ou le kilogramme (kg)."
+        },
+        {
+          "id": "mat_008",
+          "question": "Quel instrument utilise-t-on pour mesurer le volume d'un liquide?",
+          "question_en": "What instrument is used to measure the volume of a liquid?",
+          "choices": [
+            { "label": "A", "text": "Une balance" },
+            { "label": "B", "text": "Un cylindre gradué" },
+            { "label": "C", "text": "Un thermomètre" },
+            { "label": "D", "text": "Un aimant" }
+          ],
+          "correct_answer": "B",
+          "explanation": "On utilise un cylindre gradué (ou éprouvette graduée) pour mesurer le volume des liquides."
+        },
+        {
+          "id": "mat_009",
+          "question": "Quelle est l'unité SI pour mesurer le volume d'un liquide?",
+          "question_en": "What is the SI unit for measuring the volume of a liquid?",
+          "choices": [
+            { "label": "A", "text": "Le gramme (g)" },
+            { "label": "B", "text": "Le millilitre (mL) ou le litre (L)" },
+            { "label": "C", "text": "Le centimètre (cm)" },
+            { "label": "D", "text": "Le kilogramme (kg)" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'unité SI pour le volume d'un liquide est le millilitre (mL) ou le litre (L)."
+        },
+        {
+          "id": "mat_010",
+          "question": "Qu'est-ce que la densité?",
+          "question_en": "What is density?",
+          "choices": [
+            { "label": "A", "text": "La taille d'un objet" },
+            { "label": "B", "text": "La quantité de matière (masse) contenue dans un volume donné" },
+            { "label": "C", "text": "La température d'un objet" },
+            { "label": "D", "text": "La couleur d'un objet" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La densité est la quantité de matière (masse) contenue dans un espace donné (volume). Un objet dense a beaucoup de masse dans un petit volume."
+        },
+        {
+          "id": "mat_011",
+          "question": "Deux cubes ont le même volume. Le cube A a une masse de 50 g et le cube B a une masse de 100 g. Lequel est le plus dense?",
+          "question_en": "Two cubes have the same volume. Cube A has a mass of 50 g and Cube B has a mass of 100 g. Which is denser?",
+          "choices": [
+            { "label": "A", "text": "Le cube A" },
+            { "label": "B", "text": "Le cube B" },
+            { "label": "C", "text": "Ils ont la même densité" },
+            { "label": "D", "text": "On ne peut pas savoir" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le cube B est plus dense car il a plus de masse (100 g) dans le même volume que le cube A (50 g)."
+        },
+        {
+          "id": "mat_012",
+          "question": "Comment peut-on comparer directement la densité de deux liquides?",
+          "question_en": "How can you directly compare the density of two liquids?",
+          "choices": [
+            { "label": "A", "text": "En les chauffant" },
+            { "label": "B", "text": "En les versant doucement ensemble et en observant lequel coule au fond" },
+            { "label": "C", "text": "En les goûtant" },
+            { "label": "D", "text": "En les pesant sans mesurer leur volume" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Si on verse deux liquides ensemble, le liquide le plus dense coulera au fond, et le moins dense flottera sur le dessus."
+        },
+        {
+          "id": "mat_013",
+          "question": "Selon le modèle particulaire, pourquoi les gaz sont-ils moins denses que les solides?",
+          "question_en": "According to the particle model, why are gases less dense than solids?",
+          "choices": [
+            { "label": "A", "text": "Les gaz ont plus de particules" },
+            { "label": "B", "text": "Les particules de gaz sont plus grosses" },
+            { "label": "C", "text": "Les particules de gaz sont très éloignées les unes des autres, donc il y a moins de masse dans le même volume" },
+            { "label": "D", "text": "Les gaz n'ont pas de particules" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Dans un gaz, les particules sont très espacées. Il y a donc moins de particules (moins de masse) dans un même volume, ce qui rend les gaz moins denses."
+        },
+        {
+          "id": "mat_014",
+          "question": "Qu'arrive-t-il quand on comprime (presse) de l'air dans une seringue fermée?",
+          "question_en": "What happens when you compress air in a closed syringe?",
+          "choices": [
+            { "label": "A", "text": "L'air ne peut pas être comprimé" },
+            { "label": "B", "text": "Le volume d'air diminue car les particules peuvent se rapprocher" },
+            { "label": "C", "text": "L'air se transforme en eau" },
+            { "label": "D", "text": "La seringue explose toujours" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'air est compressible car les particules de gaz sont très espacées. Quand on pousse le piston, les particules se rapprochent et le volume diminue."
+        },
+        {
+          "id": "mat_015",
+          "question": "L'eau est-elle facilement compressible?",
+          "question_en": "Is water easily compressible?",
+          "choices": [
+            { "label": "A", "text": "Oui, l'eau se comprime facilement" },
+            { "label": "B", "text": "Non, l'eau est presque incompressible" },
+            { "label": "C", "text": "Oui, mais seulement quand elle est chaude" },
+            { "label": "D", "text": "Oui, mais seulement quand elle est froide" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'eau (un liquide) est presque incompressible car ses particules sont déjà très proches les unes des autres et ne peuvent pas être rapprochées davantage."
+        },
+        {
+          "id": "mat_016",
+          "question": "Pourquoi l'air est-il compressible mais pas l'eau?",
+          "question_en": "Why is air compressible but water is not?",
+          "choices": [
+            { "label": "A", "text": "L'eau est plus lourde" },
+            { "label": "B", "text": "L'air a beaucoup d'espace entre ses particules, l'eau non" },
+            { "label": "C", "text": "L'air n'a pas de particules" },
+            { "label": "D", "text": "L'eau est plus chaude" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'air (gaz) a beaucoup d'espace entre ses particules, ce qui permet de les rapprocher. L'eau (liquide) a des particules déjà très proches, donc on ne peut pas les comprimer davantage."
+        },
+        {
+          "id": "mat_017",
+          "question": "Que se passe-t-il avec les particules quand un solide fond et devient un liquide?",
+          "question_en": "What happens to particles when a solid melts and becomes a liquid?",
+          "choices": [
+            { "label": "A", "text": "Les particules disparaissent" },
+            { "label": "B", "text": "Les particules restent les mêmes mais les forces attractives s'affaiblissent, permettant aux particules de glisser" },
+            { "label": "C", "text": "De nouvelles particules sont créées" },
+            { "label": "D", "text": "Les particules deviennent plus grosses" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Quand un solide fond, les particules gagnent de l'énergie et les forces attractives s'affaiblissent. Les particules restent proches mais peuvent maintenant glisser les unes sur les autres."
+        },
+        {
+          "id": "mat_018",
+          "question": "Quelle règle de sécurité est importante lors de la mesure de la masse avec une balance?",
+          "question_en": "What safety rule is important when measuring mass with a balance?",
+          "choices": [
+            { "label": "A", "text": "Toujours porter des lunettes de soleil" },
+            { "label": "B", "text": "S'assurer que la balance est sur une surface plane et à zéro avant de commencer" },
+            { "label": "C", "text": "Secouer la balance avant de l'utiliser" },
+            { "label": "D", "text": "Toujours peser les liquides directement sur la balance sans contenant" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Avant de mesurer, il faut s'assurer que la balance est sur une surface plane et calibrée à zéro pour obtenir une mesure précise."
+        },
+        {
+          "id": "mat_019",
+          "question": "Comment doit-on lire la mesure du volume dans un cylindre gradué?",
+          "question_en": "How should you read the volume measurement in a graduated cylinder?",
+          "choices": [
+            { "label": "A", "text": "En regardant par le dessus" },
+            { "label": "B", "text": "En plaçant les yeux au niveau du ménisque (le bas de la courbe du liquide)" },
+            { "label": "C", "text": "En devinant" },
+            { "label": "D", "text": "En regardant par le dessous" }
+          ],
+          "correct_answer": "B",
+          "explanation": "On doit placer les yeux au même niveau que le ménisque (la courbe au bas de la surface du liquide) pour lire la mesure correctement."
+        },
+        {
+          "id": "mat_020",
+          "question": "Un objet a une masse de 200 g et un volume de 100 mL. Un autre objet a une masse de 200 g et un volume de 50 mL. Lequel est le plus dense?",
+          "question_en": "Object A: mass 200 g, volume 100 mL. Object B: mass 200 g, volume 50 mL. Which is denser?",
+          "choices": [
+            { "label": "A", "text": "L'objet de 100 mL" },
+            { "label": "B", "text": "L'objet de 50 mL" },
+            { "label": "C", "text": "Ils ont la même densité" },
+            { "label": "D", "text": "On ne peut pas déterminer la densité" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'objet de 50 mL est plus dense car il a la même masse (200 g) dans un plus petit volume (50 mL vs 100 mL). Plus de masse dans moins d'espace = plus dense."
+        }
+      ]
+    },
+    {
+      "unit_id": "energie",
+      "unit_name": "Énergie",
+      "unit_name_en": "Energy",
+      "organizing_idea": "Les élèves étudient et comparent comment les forces affectent les êtres vivants et les objets dans l'eau et dans l'air. Les élèves étudient et analysent différentes ressources énergétiques.",
+      "organizing_idea_en": "Students investigate and compare how forces affect living things and objects in water and air. Students investigate and analyze various energy resources.",
+      "key_topics": [
+        "Forces opposées en vol (poussée/traînée, portance/poids)",
+        "Effet de la poussée et de la traînée sur le vol",
+        "Effet de la portance et du poids sur le vol",
+        "Observation des êtres vivants et objets en vol",
+        "Technologies traditionnelles et modernes liées au vol",
+        "Construction d'un appareil volant",
+        "Force de flottabilité et poids (flotter ou couler)",
+        "Expériences contrôlées sur la flottaison",
+        "Construction d'un appareil flottant",
+        "Comparaison des ressources énergétiques renouvelables et non renouvelables",
+        "Avantages et inconvénients des ressources énergétiques",
+        "Besoins énergétiques des provinces et territoires du Canada"
+      ],
+      "questions": [
+        {
+          "id": "ene_001",
+          "question": "Quelles sont les quatre forces qui agissent sur un objet en vol?",
+          "question_en": "What are the four forces that act on an object in flight?",
+          "choices": [
+            { "label": "A", "text": "Poussée, traînée, portance et poids" },
+            { "label": "B", "text": "Gravité, magnétisme, friction et électricité" },
+            { "label": "C", "text": "Vent, pluie, neige et soleil" },
+            { "label": "D", "text": "Vitesse, direction, distance et temps" }
+          ],
+          "correct_answer": "A",
+          "explanation": "Les quatre forces du vol sont: la poussée (vers l'avant), la traînée (vers l'arrière), la portance (vers le haut) et le poids/gravité (vers le bas)."
+        },
+        {
+          "id": "ene_002",
+          "question": "Qu'est-ce que la poussée (thrust)?",
+          "question_en": "What is thrust?",
+          "choices": [
+            { "label": "A", "text": "La force qui tire un objet vers le sol" },
+            { "label": "B", "text": "La force qui propulse un objet vers l'avant" },
+            { "label": "C", "text": "La force qui ralentit un objet" },
+            { "label": "D", "text": "La force qui soulève un objet" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La poussée est la force qui propulse un objet vers l'avant dans l'air. Par exemple, un moteur d'avion crée la poussée."
+        },
+        {
+          "id": "ene_003",
+          "question": "Qu'est-ce que la traînée (drag)?",
+          "question_en": "What is drag?",
+          "choices": [
+            { "label": "A", "text": "La force qui pousse vers l'avant" },
+            { "label": "B", "text": "La force de l'air qui résiste au mouvement et ralentit l'objet" },
+            { "label": "C", "text": "La force qui soulève l'objet" },
+            { "label": "D", "text": "La force de la gravité" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La traînée est la force de résistance de l'air qui s'oppose au mouvement de l'objet et le ralentit. Elle agit dans la direction opposée à la poussée."
+        },
+        {
+          "id": "ene_004",
+          "question": "Qu'est-ce que la portance (lift)?",
+          "question_en": "What is lift?",
+          "choices": [
+            { "label": "A", "text": "La force qui pousse un objet vers le bas" },
+            { "label": "B", "text": "La force vers le haut qui permet à un objet de s'élever dans l'air" },
+            { "label": "C", "text": "La force qui pousse un objet vers l'avant" },
+            { "label": "D", "text": "La force de friction" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La portance est la force vers le haut créée par le mouvement de l'air autour des ailes. Pour voler, la portance doit être égale ou supérieure au poids."
+        },
+        {
+          "id": "ene_005",
+          "question": "Pour qu'un avion reste en vol, que doit-il se passer avec les forces?",
+          "question_en": "For a plane to stay in flight, what must happen with the forces?",
+          "choices": [
+            { "label": "A", "text": "La traînée doit être plus grande que la poussée" },
+            { "label": "B", "text": "Le poids doit être plus grand que la portance" },
+            { "label": "C", "text": "La portance doit être égale ou plus grande que le poids, et la poussée doit surmonter la traînée" },
+            { "label": "D", "text": "Toutes les forces doivent être éliminées" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Pour voler: la portance ≥ poids (pour rester en l'air) et la poussée ≥ traînée (pour avancer)."
+        },
+        {
+          "id": "ene_006",
+          "question": "Comment un oiseau utilise-t-il les forces du vol?",
+          "question_en": "How does a bird use the forces of flight?",
+          "choices": [
+            { "label": "A", "text": "Il utilise seulement la gravité" },
+            { "label": "B", "text": "Ses ailes créent la portance et la poussée en battant" },
+            { "label": "C", "text": "Il utilise un moteur comme un avion" },
+            { "label": "D", "text": "Il flotte dans l'air sans aucune force" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un oiseau bat des ailes pour créer à la fois la poussée (mouvement vers l'avant) et la portance (mouvement vers le haut). La forme de ses ailes aide aussi à créer la portance."
+        },
+        {
+          "id": "ene_007",
+          "question": "Quelle forme d'aile aide à créer la portance?",
+          "question_en": "What wing shape helps create lift?",
+          "choices": [
+            { "label": "A", "text": "Plate et carrée" },
+            { "label": "B", "text": "Courbée sur le dessus et plus plate en dessous (profil aérodynamique)" },
+            { "label": "C", "text": "Ronde comme un ballon" },
+            { "label": "D", "text": "Triangulaire pointue" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un profil aérodynamique (courbé sur le dessus, plat en dessous) force l'air à voyager plus vite au-dessus de l'aile, créant une zone de basse pression qui génère la portance."
+        },
+        {
+          "id": "ene_008",
+          "question": "Qu'est-ce que la force de flottabilité (poussée d'Archimède)?",
+          "question_en": "What is the buoyant force?",
+          "choices": [
+            { "label": "A", "text": "La force qui pousse un objet vers le fond de l'eau" },
+            { "label": "B", "text": "La force vers le haut exercée par un liquide sur un objet immergé" },
+            { "label": "C", "text": "La force de la gravité" },
+            { "label": "D", "text": "La force du vent sur l'eau" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La force de flottabilité est la force vers le haut que l'eau (ou un autre fluide) exerce sur un objet placé dedans."
+        },
+        {
+          "id": "ene_009",
+          "question": "Quand est-ce qu'un objet flotte dans l'eau?",
+          "question_en": "When does an object float in water?",
+          "choices": [
+            { "label": "A", "text": "Quand son poids est plus grand que la force de flottabilité" },
+            { "label": "B", "text": "Quand la force de flottabilité est égale ou plus grande que son poids" },
+            { "label": "C", "text": "Quand il est très gros" },
+            { "label": "D", "text": "Quand il est de couleur claire" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un objet flotte quand la force de flottabilité (vers le haut) est égale ou supérieure à son poids (vers le bas)."
+        },
+        {
+          "id": "ene_010",
+          "question": "Pourquoi un bateau en acier peut-il flotter même si l'acier est plus dense que l'eau?",
+          "question_en": "Why can a steel boat float even though steel is denser than water?",
+          "choices": [
+            { "label": "A", "text": "Parce que l'acier devient léger dans l'eau" },
+            { "label": "B", "text": "Parce que la forme creuse du bateau déplace un grand volume d'eau, créant assez de force de flottabilité" },
+            { "label": "C", "text": "Parce que le bateau a de la peinture spéciale" },
+            { "label": "D", "text": "Parce que l'eau de mer est magique" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La forme creuse du bateau déplace un grand volume d'eau. L'eau déplacée crée une force de flottabilité suffisante pour supporter le poids du bateau."
+        },
+        {
+          "id": "ene_011",
+          "question": "Quelle est la différence entre une ressource énergétique renouvelable et non renouvelable?",
+          "question_en": "What is the difference between renewable and non-renewable energy resources?",
+          "choices": [
+            { "label": "A", "text": "Les renouvelables sont plus chères" },
+            { "label": "B", "text": "Les renouvelables se régénèrent naturellement, les non renouvelables s'épuisent" },
+            { "label": "C", "text": "Les non renouvelables sont meilleures pour l'environnement" },
+            { "label": "D", "text": "Il n'y a pas de différence" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les ressources renouvelables (soleil, vent, eau) se régénèrent naturellement. Les non renouvelables (pétrole, charbon, gaz naturel) existent en quantité limitée et mettent des millions d'années à se former."
+        },
+        {
+          "id": "ene_012",
+          "question": "Lequel de ces choix est une source d'énergie NON renouvelable?",
+          "question_en": "Which is a NON-renewable energy source?",
+          "choices": [
+            { "label": "A", "text": "L'énergie solaire" },
+            { "label": "B", "text": "L'énergie éolienne" },
+            { "label": "C", "text": "Le gaz naturel" },
+            { "label": "D", "text": "L'énergie hydroélectrique" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Le gaz naturel est un combustible fossile non renouvelable. Il met des millions d'années à se former et existe en quantité limitée."
+        },
+        {
+          "id": "ene_013",
+          "question": "Lequel de ces choix est une source d'énergie renouvelable?",
+          "question_en": "Which is a renewable energy source?",
+          "choices": [
+            { "label": "A", "text": "Le charbon" },
+            { "label": "B", "text": "Le pétrole" },
+            { "label": "C", "text": "L'énergie éolienne (du vent)" },
+            { "label": "D", "text": "Le gaz naturel" }
+          ],
+          "correct_answer": "C",
+          "explanation": "L'énergie éolienne est renouvelable car le vent est une ressource naturelle qui ne s'épuise pas."
+        },
+        {
+          "id": "ene_014",
+          "question": "Quel est un avantage des combustibles fossiles?",
+          "question_en": "What is an advantage of fossil fuels?",
+          "choices": [
+            { "label": "A", "text": "Ils ne polluent pas" },
+            { "label": "B", "text": "Ils produisent beaucoup d'énergie et sont fiables" },
+            { "label": "C", "text": "Ils sont renouvelables" },
+            { "label": "D", "text": "Ils ne produisent pas de gaz à effet de serre" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les combustibles fossiles produisent beaucoup d'énergie de façon fiable et constante. Cependant, ils polluent et ne sont pas renouvelables."
+        },
+        {
+          "id": "ene_015",
+          "question": "Quel est un inconvénient de l'énergie solaire?",
+          "question_en": "What is a disadvantage of solar energy?",
+          "choices": [
+            { "label": "A", "text": "Elle pollue beaucoup" },
+            { "label": "B", "text": "Elle ne fonctionne pas la nuit et dépend de la météo" },
+            { "label": "C", "text": "Elle est non renouvelable" },
+            { "label": "D", "text": "Elle n'existe pas au Canada" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'énergie solaire ne produit pas d'électricité la nuit et est moins efficace par temps nuageux. Elle dépend donc des conditions météorologiques."
+        },
+        {
+          "id": "ene_016",
+          "question": "Quelle est la principale source d'énergie utilisée en Alberta?",
+          "question_en": "What is the main energy source used in Alberta?",
+          "choices": [
+            { "label": "A", "text": "L'énergie nucléaire" },
+            { "label": "B", "text": "L'énergie solaire" },
+            { "label": "C", "text": "Les combustibles fossiles (pétrole et gaz naturel)" },
+            { "label": "D", "text": "L'énergie hydroélectrique" }
+          ],
+          "correct_answer": "C",
+          "explanation": "L'Alberta est une province riche en pétrole et gaz naturel. Les combustibles fossiles sont sa principale source d'énergie."
+        },
+        {
+          "id": "ene_017",
+          "question": "Quelle province du Canada utilise principalement l'énergie hydroélectrique?",
+          "question_en": "Which Canadian province mainly uses hydroelectric energy?",
+          "choices": [
+            { "label": "A", "text": "L'Alberta" },
+            { "label": "B", "text": "La Saskatchewan" },
+            { "label": "C", "text": "Le Québec" },
+            { "label": "D", "text": "Le Manitoba" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Le Québec produit la grande majorité de son électricité grâce à l'énergie hydroélectrique (barrages)."
+        },
+        {
+          "id": "ene_018",
+          "question": "Qu'est-ce que la biomasse comme source d'énergie?",
+          "question_en": "What is biomass as an energy source?",
+          "choices": [
+            { "label": "A", "text": "L'énergie du vent" },
+            { "label": "B", "text": "L'énergie obtenue à partir de matières organiques (plantes, déchets, bois)" },
+            { "label": "C", "text": "L'énergie nucléaire" },
+            { "label": "D", "text": "L'énergie des vagues" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La biomasse est l'énergie obtenue à partir de matières organiques comme le bois, les résidus agricoles et les déchets alimentaires."
+        },
+        {
+          "id": "ene_019",
+          "question": "Lors de la construction d'un appareil volant, quel facteur est important pour réduire la traînée?",
+          "question_en": "When building a flying device, what factor is important for reducing drag?",
+          "choices": [
+            { "label": "A", "text": "Utiliser une forme large et plate" },
+            { "label": "B", "text": "Utiliser une forme aérodynamique (profilée)" },
+            { "label": "C", "text": "Rendre l'objet aussi lourd que possible" },
+            { "label": "D", "text": "Ajouter beaucoup de décorations" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une forme aérodynamique (profilée, lisse) réduit la traînée car l'air passe plus facilement autour de l'objet."
+        },
+        {
+          "id": "ene_020",
+          "question": "Un objet coule dans l'eau douce mais flotte dans l'eau salée. Pourquoi?",
+          "question_en": "An object sinks in fresh water but floats in salt water. Why?",
+          "choices": [
+            { "label": "A", "text": "L'eau salée est plus chaude" },
+            { "label": "B", "text": "L'eau salée est plus dense que l'eau douce, donc la force de flottabilité est plus grande" },
+            { "label": "C", "text": "L'eau salée est plus légère" },
+            { "label": "D", "text": "L'objet change de masse dans l'eau salée" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'eau salée est plus dense que l'eau douce (à cause du sel dissous). Un fluide plus dense exerce une force de flottabilité plus grande, ce qui peut faire flotter un objet qui coulerait dans l'eau douce."
+        }
+      ]
+    },
+    {
+      "unit_id": "systemes_terrestres",
+      "unit_name": "Systèmes terrestres — Climat et météo",
+      "unit_name_en": "Earth Systems — Climate and Weather",
+      "organizing_idea": "Les élèves analysent le climat et le relient aux conditions météorologiques et aux pratiques agricoles.",
+      "organizing_idea_en": "Students analyze climate and connect it to weather conditions and agricultural practices.",
+      "key_topics": [
+        "Distinction entre climat et météo",
+        "Conditions météorologiques locales, nationales et mondiales",
+        "Zones climatiques et leurs caractéristiques",
+        "Interprétation de données climatiques",
+        "Facteurs contribuant au climat de l'Alberta",
+        "Comparaison du climat de l'Alberta avec d'autres provinces",
+        "Instruments de mesure météorologique",
+        "Construction d'instruments météo simples",
+        "Observation et enregistrement de la météo locale",
+        "Cartes météorologiques",
+        "Prévisions météorologiques",
+        "Méthodes autochtones de prédiction météo",
+        "Effet du climat sur l'agriculture et les activités humaines",
+        "Pratiques agricoles durables",
+        "Comportement animal et reconnaissance des patrons météo"
+      ],
+      "questions": [
+        {
+          "id": "ter_001",
+          "question": "Quelle est la différence entre la météo et le climat?",
+          "question_en": "What is the difference between weather and climate?",
+          "choices": [
+            { "label": "A", "text": "La météo et le climat sont la même chose" },
+            { "label": "B", "text": "La météo décrit les conditions atmosphériques à court terme; le climat décrit les tendances sur une longue période (30+ ans)" },
+            { "label": "C", "text": "Le climat change chaque jour" },
+            { "label": "D", "text": "La météo ne change jamais" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La météo décrit les conditions atmosphériques quotidiennes (température, pluie, vent). Le climat décrit les tendances moyennes sur de longues périodes (généralement 30 ans ou plus)."
+        },
+        {
+          "id": "ter_002",
+          "question": "Lequel est un exemple de météo et non de climat?",
+          "question_en": "Which is an example of weather, not climate?",
+          "choices": [
+            { "label": "A", "text": "Les hivers en Alberta sont généralement froids" },
+            { "label": "B", "text": "Il pleut aujourd'hui à Calgary" },
+            { "label": "C", "text": "Le désert du Sahara est chaud et sec" },
+            { "label": "D", "text": "Vancouver reçoit beaucoup de pluie en moyenne" }
+          ],
+          "correct_answer": "B",
+          "explanation": "\"Il pleut aujourd'hui à Calgary\" décrit une condition atmosphérique spécifique et temporaire, c'est donc de la météo. Les autres options décrivent des tendances à long terme (climat)."
+        },
+        {
+          "id": "ter_003",
+          "question": "Quelles sont les principales zones climatiques de la Terre?",
+          "question_en": "What are the main climate zones of Earth?",
+          "choices": [
+            { "label": "A", "text": "Jour et nuit" },
+            { "label": "B", "text": "Tropical, tempéré et polaire" },
+            { "label": "C", "text": "Chaud, moyen et froid" },
+            { "label": "D", "text": "Montagne, plaine et océan" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les trois principales zones climatiques sont: tropicale (proche de l'équateur, chaude), tempérée (entre les tropiques et les pôles) et polaire (près des pôles, froide)."
+        },
+        {
+          "id": "ter_004",
+          "question": "Dans quelle zone climatique se trouve l'Alberta?",
+          "question_en": "In which climate zone is Alberta?",
+          "choices": [
+            { "label": "A", "text": "Tropicale" },
+            { "label": "B", "text": "Tempérée / continentale" },
+            { "label": "C", "text": "Polaire" },
+            { "label": "D", "text": "Désertique" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'Alberta est dans la zone tempérée/continentale avec des hivers froids, des étés chauds et des variations saisonnières importantes."
+        },
+        {
+          "id": "ter_005",
+          "question": "Quel facteur influence le plus le climat d'une région?",
+          "question_en": "What factor most influences a region's climate?",
+          "choices": [
+            { "label": "A", "text": "La couleur du sol" },
+            { "label": "B", "text": "La latitude (distance de l'équateur)" },
+            { "label": "C", "text": "Le nombre d'animaux" },
+            { "label": "D", "text": "La couleur des maisons" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La latitude est le facteur le plus important. Plus on est proche de l'équateur, plus il fait chaud; plus on s'en éloigne vers les pôles, plus il fait froid."
+        },
+        {
+          "id": "ter_006",
+          "question": "Comment l'altitude affecte-t-elle le climat?",
+          "question_en": "How does altitude affect climate?",
+          "choices": [
+            { "label": "A", "text": "Plus on monte en altitude, plus il fait chaud" },
+            { "label": "B", "text": "Plus on monte en altitude, plus il fait froid" },
+            { "label": "C", "text": "L'altitude n'a aucun effet sur le climat" },
+            { "label": "D", "text": "Plus on monte en altitude, plus il pleut toujours" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La température diminue avec l'altitude. C'est pourquoi les sommets des montagnes sont couverts de neige même en été."
+        },
+        {
+          "id": "ter_007",
+          "question": "Comment la proximité d'un océan affecte-t-elle le climat?",
+          "question_en": "How does proximity to an ocean affect climate?",
+          "choices": [
+            { "label": "A", "text": "Les régions côtières ont des températures plus extrêmes" },
+            { "label": "B", "text": "Les régions côtières ont des températures plus modérées (hivers plus doux, étés plus frais)" },
+            { "label": "C", "text": "L'océan n'a aucun effet sur le climat" },
+            { "label": "D", "text": "Les régions côtières sont toujours plus froides" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'eau se réchauffe et se refroidit plus lentement que la terre. Les régions côtières ont donc des températures plus modérées (hivers plus doux, étés plus frais) comparées aux régions intérieures."
+        },
+        {
+          "id": "ter_008",
+          "question": "Quel instrument mesure la température de l'air?",
+          "question_en": "What instrument measures air temperature?",
+          "choices": [
+            { "label": "A", "text": "Le baromètre" },
+            { "label": "B", "text": "Le thermomètre" },
+            { "label": "C", "text": "L'anémomètre" },
+            { "label": "D", "text": "Le pluviomètre" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le thermomètre mesure la température de l'air, généralement en degrés Celsius (°C) au Canada."
+        },
+        {
+          "id": "ter_009",
+          "question": "Quel instrument mesure la pression atmosphérique?",
+          "question_en": "What instrument measures atmospheric pressure?",
+          "choices": [
+            { "label": "A", "text": "Le thermomètre" },
+            { "label": "B", "text": "L'anémomètre" },
+            { "label": "C", "text": "Le baromètre" },
+            { "label": "D", "text": "L'hygromètre" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Le baromètre mesure la pression atmosphérique. Une pression qui baisse peut indiquer l'arrivée de mauvais temps."
+        },
+        {
+          "id": "ter_010",
+          "question": "Quel instrument mesure la vitesse du vent?",
+          "question_en": "What instrument measures wind speed?",
+          "choices": [
+            { "label": "A", "text": "La girouette" },
+            { "label": "B", "text": "L'anémomètre" },
+            { "label": "C", "text": "Le pluviomètre" },
+            { "label": "D", "text": "Le thermomètre" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'anémomètre mesure la vitesse du vent. La girouette mesure la direction du vent."
+        },
+        {
+          "id": "ter_011",
+          "question": "Quel instrument mesure la quantité de pluie tombée?",
+          "question_en": "What instrument measures the amount of rainfall?",
+          "choices": [
+            { "label": "A", "text": "L'anémomètre" },
+            { "label": "B", "text": "Le baromètre" },
+            { "label": "C", "text": "Le pluviomètre" },
+            { "label": "D", "text": "L'hygromètre" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Le pluviomètre recueille et mesure la quantité de pluie (précipitations) tombée sur une période donnée."
+        },
+        {
+          "id": "ter_012",
+          "question": "Quel instrument mesure la direction du vent?",
+          "question_en": "What instrument measures wind direction?",
+          "choices": [
+            { "label": "A", "text": "L'anémomètre" },
+            { "label": "B", "text": "La girouette" },
+            { "label": "C", "text": "Le baromètre" },
+            { "label": "D", "text": "Le thermomètre" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La girouette indique la direction d'où souffle le vent."
+        },
+        {
+          "id": "ter_013",
+          "question": "Quel instrument mesure l'humidité de l'air?",
+          "question_en": "What instrument measures air humidity?",
+          "choices": [
+            { "label": "A", "text": "Le thermomètre" },
+            { "label": "B", "text": "L'hygromètre" },
+            { "label": "C", "text": "Le pluviomètre" },
+            { "label": "D", "text": "L'anémomètre" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'hygromètre mesure l'humidité (la quantité de vapeur d'eau) dans l'air."
+        },
+        {
+          "id": "ter_014",
+          "question": "Pourquoi les prévisions météorologiques sont-elles importantes?",
+          "question_en": "Why are weather forecasts important?",
+          "choices": [
+            { "label": "A", "text": "Elles ne sont pas vraiment importantes" },
+            { "label": "B", "text": "Elles aident les gens à se préparer, assurent la sécurité et aident les agriculteurs à planifier" },
+            { "label": "C", "text": "Elles servent seulement à décider quoi porter" },
+            { "label": "D", "text": "Elles sont toujours exactes à 100%" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les prévisions météo aident à la sécurité publique (avertissements de tempêtes), aident les agriculteurs à planifier (semences, récoltes), et permettent aux gens de se préparer."
+        },
+        {
+          "id": "ter_015",
+          "question": "Comment les Premières Nations, les Métis et les Inuits prédisaient-ils traditionnellement la météo?",
+          "question_en": "How did First Nations, Métis, and Inuit traditionally predict weather?",
+          "choices": [
+            { "label": "A", "text": "Avec des ordinateurs et des satellites" },
+            { "label": "B", "text": "En observant le comportement des animaux, les nuages, le vent et les signes naturels" },
+            { "label": "C", "text": "Ils ne prédisaient pas la météo" },
+            { "label": "D", "text": "En regardant la télévision" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les peuples autochtones utilisaient l'observation de la nature: le comportement des animaux, les formations nuageuses, la direction du vent et d'autres signes naturels pour prédire la météo."
+        },
+        {
+          "id": "ter_016",
+          "question": "Comment le climat de l'Alberta affecte-t-il l'agriculture?",
+          "question_en": "How does Alberta's climate affect agriculture?",
+          "choices": [
+            { "label": "A", "text": "Il permet de cultiver des fruits tropicaux toute l'année" },
+            { "label": "B", "text": "Les hivers longs et froids limitent la saison de croissance; les sécheresses et le gel sont des risques" },
+            { "label": "C", "text": "Il n'a aucun effet sur l'agriculture" },
+            { "label": "D", "text": "Il est trop chaud pour faire pousser quoi que ce soit" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le climat continental de l'Alberta avec ses hivers longs, le risque de gel tardif au printemps et les sécheresses estivales affecte quels types de cultures peuvent pousser et quand."
+        },
+        {
+          "id": "ter_017",
+          "question": "Qu'est-ce que l'agriculture de conservation?",
+          "question_en": "What is conservation agriculture?",
+          "choices": [
+            { "label": "A", "text": "Utiliser le plus de produits chimiques possible" },
+            { "label": "B", "text": "Des pratiques agricoles qui protègent le sol et l'eau, comme le semis direct et la rotation des cultures" },
+            { "label": "C", "text": "Construire des musées sur les fermes" },
+            { "label": "D", "text": "Ne rien cultiver" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'agriculture de conservation utilise des pratiques durables comme le semis direct (ne pas labourer), la rotation des cultures et la couverture du sol pour protéger les ressources naturelles."
+        },
+        {
+          "id": "ter_018",
+          "question": "Quel type de nuage est haut, mince et composé de cristaux de glace?",
+          "question_en": "What type of cloud is high, thin, and made of ice crystals?",
+          "choices": [
+            { "label": "A", "text": "Cumulus" },
+            { "label": "B", "text": "Cumulonimbus" },
+            { "label": "C", "text": "Cirrus" },
+            { "label": "D", "text": "Stratus" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Les cirrus sont des nuages hauts, minces et filamenteux, composés de cristaux de glace. Ils indiquent généralement du beau temps mais peuvent annoncer un changement."
+        },
+        {
+          "id": "ter_019",
+          "question": "Quel type de nuage est associé aux orages violents?",
+          "question_en": "What type of cloud is associated with violent thunderstorms?",
+          "choices": [
+            { "label": "A", "text": "Cirrus" },
+            { "label": "B", "text": "Stratus" },
+            { "label": "C", "text": "Cumulonimbus" },
+            { "label": "D", "text": "Cumulus" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Les cumulonimbus sont de très grands nuages verticaux associés aux orages, à la foudre, à la grêle et parfois aux tornades."
+        },
+        {
+          "id": "ter_020",
+          "question": "Comment le comportement des animaux peut-il aider à prédire la météo?",
+          "question_en": "How can animal behaviour help predict weather?",
+          "choices": [
+            { "label": "A", "text": "Les animaux peuvent parler et dire le temps qu'il fera" },
+            { "label": "B", "text": "Certains animaux changent de comportement avant une tempête (ex: les oiseaux volent bas, les grenouilles coassent plus)" },
+            { "label": "C", "text": "Les animaux ne réagissent pas à la météo" },
+            { "label": "D", "text": "Les animaux regardent les prévisions à la télé" }
+          ],
+          "correct_answer": "B",
+          "explanation": "De nombreux animaux sont sensibles aux changements de pression atmosphérique et d'humidité. Par exemple, les oiseaux volent plus bas avant une tempête et certains insectes deviennent plus actifs."
+        },
+        {
+          "id": "ter_021",
+          "question": "En comparant le climat de l'Alberta et celui de la Colombie-Britannique côtière, quelle différence importante y a-t-il?",
+          "question_en": "Comparing Alberta's climate with coastal British Columbia, what is an important difference?",
+          "choices": [
+            { "label": "A", "text": "Ils ont exactement le même climat" },
+            { "label": "B", "text": "La C.-B. côtière a des hivers plus doux et plus humides grâce à l'influence de l'océan Pacifique" },
+            { "label": "C", "text": "L'Alberta a des hivers plus doux" },
+            { "label": "D", "text": "La C.-B. côtière ne reçoit jamais de pluie" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La côte de la C.-B. bénéficie de l'effet modérateur de l'océan Pacifique, ce qui lui donne des hivers plus doux et plus humides que l'Alberta, qui a un climat continental avec des hivers plus froids et secs."
+        },
+        {
+          "id": "ter_022",
+          "question": "Qu'est-ce qu'une carte météorologique montre?",
+          "question_en": "What does a weather map show?",
+          "choices": [
+            { "label": "A", "text": "Seulement les routes et les villes" },
+            { "label": "B", "text": "Les conditions météorologiques actuelles ou prévues (fronts, pression, température, précipitations)" },
+            { "label": "C", "text": "Les magasins à proximité" },
+            { "label": "D", "text": "Les résultats sportifs" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une carte météorologique montre les conditions atmosphériques: systèmes de haute et basse pression, fronts chauds et froids, précipitations, températures et vent."
+        },
+        {
+          "id": "ter_023",
+          "question": "Qu'est-ce que la récolte durable signifie?",
+          "question_en": "What does sustainable harvesting mean?",
+          "choices": [
+            { "label": "A", "text": "Récolter tout le plus vite possible" },
+            { "label": "B", "text": "Récolter de façon à ne pas épuiser les ressources pour les générations futures" },
+            { "label": "C", "text": "Ne jamais récolter" },
+            { "label": "D", "text": "Récolter seulement en hiver" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La récolte durable signifie prélever des ressources naturelles à un rythme qui permet leur renouvellement, assurant leur disponibilité pour les générations futures."
+        }
+      ]
+    },
+    {
+      "unit_id": "systemes_vivants",
+      "unit_name": "Systèmes vivants",
+      "unit_name_en": "Living Systems",
+      "organizing_idea": "Les élèves étudient les systèmes internes des organismes et expliquent comment ils soutiennent les processus biologiques vitaux.",
+      "organizing_idea_en": "Students investigate the internal systems of organisms and explain how they support vital biological processes.",
+      "key_topics": [
+        "Processus biologiques vitaux et systèmes internes",
+        "Système digestif humain",
+        "Système respiratoire humain",
+        "Système circulatoire humain",
+        "Système musculosquelettique humain",
+        "Organes principaux de chaque système",
+        "Relations entre les systèmes (oxygène et nutriments)",
+        "Systèmes de transport des plantes"
+      ],
+      "questions": [
+        {
+          "id": "viv_001",
+          "question": "Quels sont les quatre principaux systèmes du corps humain étudiés en 5e année?",
+          "question_en": "What are the four main human body systems studied in Grade 5?",
+          "choices": [
+            { "label": "A", "text": "Solaire, lunaire, stellaire, planétaire" },
+            { "label": "B", "text": "Digestif, respiratoire, circulatoire et musculosquelettique" },
+            { "label": "C", "text": "Électrique, mécanique, chimique et nucléaire" },
+            { "label": "D", "text": "Animal, végétal, minéral et gazeux" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les quatre systèmes étudiés sont le système digestif, le système respiratoire, le système circulatoire et le système musculosquelettique."
+        },
+        {
+          "id": "viv_002",
+          "question": "Quel est le rôle principal du système digestif?",
+          "question_en": "What is the main role of the digestive system?",
+          "choices": [
+            { "label": "A", "text": "Transporter le sang" },
+            { "label": "B", "text": "Décomposer les aliments en nutriments que le corps peut utiliser" },
+            { "label": "C", "text": "Permettre de respirer" },
+            { "label": "D", "text": "Protéger les os" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système digestif décompose les aliments en nutriments (énergie, vitamines, minéraux) que le corps peut absorber et utiliser."
+        },
+        {
+          "id": "viv_003",
+          "question": "Quel est le bon ordre du trajet des aliments dans le système digestif?",
+          "question_en": "What is the correct order of the digestive tract?",
+          "choices": [
+            { "label": "A", "text": "Bouche → estomac → œsophage → intestin grêle → gros intestin" },
+            { "label": "B", "text": "Bouche → œsophage → estomac → intestin grêle → gros intestin" },
+            { "label": "C", "text": "Estomac → bouche → intestin grêle → gros intestin → œsophage" },
+            { "label": "D", "text": "Bouche → intestin grêle → estomac → gros intestin → œsophage" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les aliments passent par: la bouche (mastication) → l'œsophage (tube vers l'estomac) → l'estomac (digestion acide) → l'intestin grêle (absorption) → le gros intestin (eau et déchets)."
+        },
+        {
+          "id": "viv_004",
+          "question": "Où la plupart des nutriments sont-ils absorbés dans le système digestif?",
+          "question_en": "Where are most nutrients absorbed in the digestive system?",
+          "choices": [
+            { "label": "A", "text": "Dans la bouche" },
+            { "label": "B", "text": "Dans l'estomac" },
+            { "label": "C", "text": "Dans l'intestin grêle" },
+            { "label": "D", "text": "Dans le gros intestin" }
+          ],
+          "correct_answer": "C",
+          "explanation": "L'intestin grêle est l'endroit principal où les nutriments sont absorbés et passent dans le sang pour être distribués dans tout le corps."
+        },
+        {
+          "id": "viv_005",
+          "question": "Quel est le rôle principal du système respiratoire?",
+          "question_en": "What is the main role of the respiratory system?",
+          "choices": [
+            { "label": "A", "text": "Digérer les aliments" },
+            { "label": "B", "text": "Apporter de l'oxygène au corps et éliminer le dioxyde de carbone" },
+            { "label": "C", "text": "Pomper le sang" },
+            { "label": "D", "text": "Bouger les muscles" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système respiratoire apporte l'oxygène de l'air dans le corps et élimine le dioxyde de carbone (déchet) du corps."
+        },
+        {
+          "id": "viv_006",
+          "question": "Quels sont les organes principaux du système respiratoire?",
+          "question_en": "What are the main organs of the respiratory system?",
+          "choices": [
+            { "label": "A", "text": "Le cœur, les veines et les artères" },
+            { "label": "B", "text": "Le nez, la trachée, les bronches et les poumons" },
+            { "label": "C", "text": "L'estomac, les intestins et le foie" },
+            { "label": "D", "text": "Les os, les muscles et les tendons" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système respiratoire comprend le nez/bouche, la trachée, les bronches et les poumons (où se fait l'échange de gaz)."
+        },
+        {
+          "id": "viv_007",
+          "question": "Que se passe-t-il dans les poumons?",
+          "question_en": "What happens in the lungs?",
+          "choices": [
+            { "label": "A", "text": "Les aliments sont digérés" },
+            { "label": "B", "text": "L'échange gazeux: l'oxygène entre dans le sang et le dioxyde de carbone en sort" },
+            { "label": "C", "text": "Le sang est fabriqué" },
+            { "label": "D", "text": "Les os se forment" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Dans les poumons, l'oxygène de l'air passe dans le sang (dans les alvéoles) et le dioxyde de carbone passe du sang à l'air pour être expiré."
+        },
+        {
+          "id": "viv_008",
+          "question": "Quel est le rôle principal du système circulatoire?",
+          "question_en": "What is the main role of the circulatory system?",
+          "choices": [
+            { "label": "A", "text": "Respirer" },
+            { "label": "B", "text": "Transporter le sang, l'oxygène, les nutriments et les déchets à travers le corps" },
+            { "label": "C", "text": "Digérer les aliments" },
+            { "label": "D", "text": "Soutenir le corps" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système circulatoire transporte le sang (qui contient l'oxygène, les nutriments et les déchets) à travers tout le corps."
+        },
+        {
+          "id": "viv_009",
+          "question": "Quels sont les organes principaux du système circulatoire?",
+          "question_en": "What are the main organs of the circulatory system?",
+          "choices": [
+            { "label": "A", "text": "Les poumons, la trachée et le nez" },
+            { "label": "B", "text": "Le cœur, le sang, les artères et les veines" },
+            { "label": "C", "text": "Le cerveau et la moelle épinière" },
+            { "label": "D", "text": "Les os et les muscles" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système circulatoire comprend le cœur (pompe), le sang, les artères (transportent le sang du cœur) et les veines (ramènent le sang au cœur)."
+        },
+        {
+          "id": "viv_010",
+          "question": "Quel est le rôle du cœur?",
+          "question_en": "What is the role of the heart?",
+          "choices": [
+            { "label": "A", "text": "Filtrer le sang" },
+            { "label": "B", "text": "Pomper le sang à travers tout le corps" },
+            { "label": "C", "text": "Fabriquer les globules rouges" },
+            { "label": "D", "text": "Stocker l'oxygène" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le cœur est un muscle qui agit comme une pompe, envoyant le sang riche en oxygène vers le corps et le sang pauvre en oxygène vers les poumons."
+        },
+        {
+          "id": "viv_011",
+          "question": "Quelle est la différence entre les artères et les veines?",
+          "question_en": "What is the difference between arteries and veins?",
+          "choices": [
+            { "label": "A", "text": "Il n'y a pas de différence" },
+            { "label": "B", "text": "Les artères transportent le sang du cœur vers le corps; les veines ramènent le sang vers le cœur" },
+            { "label": "C", "text": "Les artères sont bleues et les veines sont rouges" },
+            { "label": "D", "text": "Les artères ne transportent que de l'eau" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les artères transportent le sang riche en oxygène du cœur vers le corps. Les veines ramènent le sang pauvre en oxygène du corps vers le cœur."
+        },
+        {
+          "id": "viv_012",
+          "question": "Qu'est-ce que le système musculosquelettique?",
+          "question_en": "What is the musculoskeletal system?",
+          "choices": [
+            { "label": "A", "text": "Le système qui digère les aliments" },
+            { "label": "B", "text": "Le système composé des os (squelette) et des muscles qui permettent le mouvement et le soutien" },
+            { "label": "C", "text": "Le système qui fait circuler le sang" },
+            { "label": "D", "text": "Le système qui contrôle les pensées" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système musculosquelettique comprend les os (qui soutiennent et protègent) et les muscles (qui permettent le mouvement)."
+        },
+        {
+          "id": "viv_013",
+          "question": "Comment le système circulatoire et le système respiratoire travaillent-ils ensemble?",
+          "question_en": "How do the circulatory and respiratory systems work together?",
+          "choices": [
+            { "label": "A", "text": "Ils ne travaillent pas ensemble" },
+            { "label": "B", "text": "Les poumons mettent l'oxygène dans le sang, et le cœur pompe ce sang riche en oxygène vers tout le corps" },
+            { "label": "C", "text": "Le cœur aide les poumons à digérer" },
+            { "label": "D", "text": "Les poumons pompent le sang" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le système respiratoire met l'oxygène dans le sang (dans les poumons). Le système circulatoire transporte ensuite ce sang riche en oxygène vers toutes les cellules du corps."
+        },
+        {
+          "id": "viv_014",
+          "question": "Comment le système digestif et le système circulatoire travaillent-ils ensemble?",
+          "question_en": "How do the digestive and circulatory systems work together?",
+          "choices": [
+            { "label": "A", "text": "Ils ne sont pas connectés" },
+            { "label": "B", "text": "Le système digestif décompose les aliments en nutriments, et le système circulatoire transporte ces nutriments vers les cellules du corps" },
+            { "label": "C", "text": "Le cœur aide à mâcher les aliments" },
+            { "label": "D", "text": "L'estomac pompe le sang" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'intestin grêle absorbe les nutriments des aliments digérés. Ces nutriments passent dans le sang, et le système circulatoire les distribue à toutes les cellules du corps."
+        },
+        {
+          "id": "viv_015",
+          "question": "Comment les plantes transportent-elles l'eau des racines vers les feuilles?",
+          "question_en": "How do plants transport water from roots to leaves?",
+          "choices": [
+            { "label": "A", "text": "Par leurs fleurs" },
+            { "label": "B", "text": "Par des tubes appelés xylème" },
+            { "label": "C", "text": "L'eau ne se déplace pas dans les plantes" },
+            { "label": "D", "text": "Par leurs graines" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le xylème est un système de tubes dans les plantes qui transporte l'eau et les minéraux des racines vers les feuilles et les autres parties de la plante."
+        },
+        {
+          "id": "viv_016",
+          "question": "Comment les plantes transportent-elles les sucres (nourriture) des feuilles vers les autres parties?",
+          "question_en": "How do plants transport sugars from leaves to other parts?",
+          "choices": [
+            { "label": "A", "text": "Par le xylème" },
+            { "label": "B", "text": "Par des tubes appelés phloème" },
+            { "label": "C", "text": "Les plantes ne fabriquent pas de nourriture" },
+            { "label": "D", "text": "Par leurs racines seulement" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le phloème est le système de tubes qui transporte les sucres (produits par la photosynthèse dans les feuilles) vers toutes les autres parties de la plante."
+        },
+        {
+          "id": "viv_017",
+          "question": "Quel organe du corps humain élimine les déchets du sang?",
+          "question_en": "Which organ removes waste from the blood?",
+          "choices": [
+            { "label": "A", "text": "Le cœur" },
+            { "label": "B", "text": "Les poumons" },
+            { "label": "C", "text": "Les reins" },
+            { "label": "D", "text": "L'estomac" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Les reins filtrent le sang et éliminent les déchets sous forme d'urine."
+        },
+        {
+          "id": "viv_018",
+          "question": "Quel rôle jouent les os dans le corps humain?",
+          "question_en": "What role do bones play in the human body?",
+          "choices": [
+            { "label": "A", "text": "Seulement permettre le mouvement" },
+            { "label": "B", "text": "Soutenir le corps, protéger les organes et produire des cellules sanguines" },
+            { "label": "C", "text": "Digérer les aliments" },
+            { "label": "D", "text": "Transporter l'oxygène" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les os soutiennent la structure du corps, protègent les organes vitaux (le crâne protège le cerveau, les côtes protègent le cœur et les poumons) et la moelle osseuse produit des cellules sanguines."
+        }
+      ]
+    },
+    {
+      "unit_id": "espace",
+      "unit_name": "Espace",
+      "unit_name_en": "Space",
+      "organizing_idea": "Les élèves étudient et interprètent des phénomènes astronomiques.",
+      "organizing_idea_en": "Students investigate and interpret astronomical phenomena.",
+      "key_topics": [
+        "Direction de l'inclinaison de la Terre et durée du jour/nuit selon les saisons",
+        "Observations cycliques de l'apparence de la Lune (phases)",
+        "Éclipses lunaires et solaires, aurores boréales",
+        "Phénomènes astronomiques cycliques",
+        "Savoirs autochtones sur les phénomènes astronomiques",
+        "Histoires inuites, des Premières Nations et métisses liées au soleil de minuit, nuit polaire, aurores boréales",
+        "Représentation des phénomènes astronomiques",
+        "Représentations autochtones des phénomènes astronomiques",
+        "Observation astronomique et pratiques agricoles/chasse"
+      ],
+      "questions": [
+        {
+          "id": "esp_001",
+          "question": "Qu'est-ce qui cause le jour et la nuit sur la Terre?",
+          "question_en": "What causes day and night on Earth?",
+          "choices": [
+            { "label": "A", "text": "La Terre qui tourne autour du Soleil" },
+            { "label": "B", "text": "La rotation de la Terre sur son axe (un tour en ~24 heures)" },
+            { "label": "C", "text": "La Lune qui bloque le Soleil" },
+            { "label": "D", "text": "Le Soleil qui s'éteint la nuit" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le jour et la nuit sont causés par la rotation de la Terre sur son axe. La moitié de la Terre face au Soleil a le jour; l'autre moitié a la nuit."
+        },
+        {
+          "id": "esp_002",
+          "question": "Pourquoi avons-nous des saisons sur la Terre?",
+          "question_en": "Why do we have seasons on Earth?",
+          "choices": [
+            { "label": "A", "text": "Parce que la Terre se rapproche et s'éloigne du Soleil" },
+            { "label": "B", "text": "Parce que l'axe de la Terre est incliné d'environ 23,5°" },
+            { "label": "C", "text": "Parce que le Soleil change de taille" },
+            { "label": "D", "text": "Parce que la Lune bloque la lumière du Soleil" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'inclinaison de l'axe de la Terre (23,5°) fait que différentes parties de la Terre reçoivent plus ou moins de lumière directe du Soleil au cours de l'année, créant les saisons."
+        },
+        {
+          "id": "esp_003",
+          "question": "Quand c'est l'été dans l'hémisphère nord, pourquoi les jours sont-ils plus longs?",
+          "question_en": "When it's summer in the Northern Hemisphere, why are the days longer?",
+          "choices": [
+            { "label": "A", "text": "La Terre tourne plus lentement" },
+            { "label": "B", "text": "L'hémisphère nord est incliné vers le Soleil, recevant plus d'heures de lumière" },
+            { "label": "C", "text": "Le Soleil brille plus fort" },
+            { "label": "D", "text": "La Lune est plus loin" }
+          ],
+          "correct_answer": "B",
+          "explanation": "En été, l'hémisphère nord est incliné vers le Soleil. Cela signifie plus d'heures d'ensoleillement (jours plus longs) et des rayons plus directs (plus chaud)."
+        },
+        {
+          "id": "esp_004",
+          "question": "Quelles sont les phases de la Lune?",
+          "question_en": "What are the phases of the Moon?",
+          "choices": [
+            { "label": "A", "text": "Les changements de taille réelle de la Lune" },
+            { "label": "B", "text": "Les différentes apparences de la Lune vue de la Terre selon sa position par rapport au Soleil" },
+            { "label": "C", "text": "Les couleurs que la Lune prend" },
+            { "label": "D", "text": "Les moments où la Lune disparaît" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les phases de la Lune sont les différentes apparences de la partie illuminée de la Lune, selon sa position relative par rapport à la Terre et au Soleil."
+        },
+        {
+          "id": "esp_005",
+          "question": "Combien de temps dure un cycle complet des phases de la Lune?",
+          "question_en": "How long does a complete cycle of Moon phases last?",
+          "choices": [
+            { "label": "A", "text": "Environ 7 jours" },
+            { "label": "B", "text": "Environ 29,5 jours" },
+            { "label": "C", "text": "Environ 365 jours" },
+            { "label": "D", "text": "Environ 24 heures" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un cycle lunaire complet (de nouvelle lune à nouvelle lune) dure environ 29,5 jours."
+        },
+        {
+          "id": "esp_006",
+          "question": "Qu'est-ce qu'une éclipse solaire?",
+          "question_en": "What is a solar eclipse?",
+          "choices": [
+            { "label": "A", "text": "Quand la Terre bloque la lumière du Soleil sur la Lune" },
+            { "label": "B", "text": "Quand la Lune passe entre la Terre et le Soleil, bloquant la lumière du Soleil" },
+            { "label": "C", "text": "Quand le Soleil disparaît" },
+            { "label": "D", "text": "Quand deux planètes se rencontrent" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une éclipse solaire se produit quand la Lune passe entre la Terre et le Soleil, projetant une ombre sur la Terre et bloquant partiellement ou totalement la lumière du Soleil."
+        },
+        {
+          "id": "esp_007",
+          "question": "Qu'est-ce qu'une éclipse lunaire?",
+          "question_en": "What is a lunar eclipse?",
+          "choices": [
+            { "label": "A", "text": "Quand la Lune passe entre la Terre et le Soleil" },
+            { "label": "B", "text": "Quand la Terre passe entre le Soleil et la Lune, projetant son ombre sur la Lune" },
+            { "label": "C", "text": "Quand la Lune devient plus grosse" },
+            { "label": "D", "text": "Quand la Lune tourne sur elle-même" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une éclipse lunaire se produit quand la Terre se trouve entre le Soleil et la Lune, et l'ombre de la Terre est projetée sur la Lune."
+        },
+        {
+          "id": "esp_008",
+          "question": "Que sont les aurores boréales?",
+          "question_en": "What are the northern lights (aurora borealis)?",
+          "choices": [
+            { "label": "A", "text": "Des étoiles filantes" },
+            { "label": "B", "text": "Des lumières colorées dans le ciel causées par l'interaction de particules solaires avec l'atmosphère terrestre" },
+            { "label": "C", "text": "Des reflets de la Lune" },
+            { "label": "D", "text": "Des feux d'artifice naturels" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les aurores boréales sont des lumières colorées visibles dans le ciel nocturne, causées par des particules chargées du Soleil (vent solaire) qui interagissent avec les gaz de l'atmosphère terrestre."
+        },
+        {
+          "id": "esp_009",
+          "question": "Qu'est-ce qu'une constellation?",
+          "question_en": "What is a constellation?",
+          "choices": [
+            { "label": "A", "text": "Une planète" },
+            { "label": "B", "text": "Un groupe d'étoiles qui forme un motif reconnaissable dans le ciel nocturne" },
+            { "label": "C", "text": "Un satellite artificiel" },
+            { "label": "D", "text": "Un type de nuage" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une constellation est un groupe d'étoiles qui, vues de la Terre, semblent former un motif ou une figure reconnaissable (comme la Grande Ourse)."
+        },
+        {
+          "id": "esp_010",
+          "question": "Pourquoi les constellations visibles changent-elles selon les saisons?",
+          "question_en": "Why do visible constellations change with the seasons?",
+          "choices": [
+            { "label": "A", "text": "Les étoiles se déplacent" },
+            { "label": "B", "text": "La Terre orbite autour du Soleil, donc notre vue du ciel nocturne change" },
+            { "label": "C", "text": "Les constellations disparaissent en été" },
+            { "label": "D", "text": "La Lune les cache" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Au fil de l'année, la Terre se déplace autour du Soleil. Cela change la direction vers laquelle nous regardons la nuit, nous montrant différentes parties du ciel et différentes constellations."
+        },
+        {
+          "id": "esp_011",
+          "question": "Qu'est-ce que le «soleil de minuit»?",
+          "question_en": "What is the 'midnight sun'?",
+          "choices": [
+            { "label": "A", "text": "Une étoile qui brille à minuit" },
+            { "label": "B", "text": "Un phénomène où le Soleil reste visible 24 heures par jour dans les régions polaires en été" },
+            { "label": "C", "text": "Le Soleil qui est plus brillant la nuit" },
+            { "label": "D", "text": "Un type de Lune" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le soleil de minuit est un phénomène qui se produit dans les régions proches des pôles en été, où le Soleil ne se couche pas pendant 24 heures à cause de l'inclinaison de l'axe terrestre."
+        },
+        {
+          "id": "esp_012",
+          "question": "Comment les peuples autochtones utilisaient-ils l'observation des étoiles et des phénomènes astronomiques?",
+          "question_en": "How did Indigenous peoples use observation of stars and astronomical phenomena?",
+          "choices": [
+            { "label": "A", "text": "Ils ne regardaient jamais le ciel" },
+            { "label": "B", "text": "Pour déterminer les saisons, planifier l'agriculture, la chasse et les déplacements" },
+            { "label": "C", "text": "Seulement pour le divertissement" },
+            { "label": "D", "text": "Pour prédire les résultats de jeux" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les peuples autochtones observaient les étoiles, la Lune et les phénomènes astronomiques pour déterminer les saisons, planifier les périodes de plantation, de récolte, de chasse et de migration."
+        },
+        {
+          "id": "esp_013",
+          "question": "Combien de temps la Terre prend-elle pour faire un tour complet autour du Soleil?",
+          "question_en": "How long does it take Earth to orbit the Sun?",
+          "choices": [
+            { "label": "A", "text": "24 heures" },
+            { "label": "B", "text": "30 jours" },
+            { "label": "C", "text": "Environ 365,25 jours (1 an)" },
+            { "label": "D", "text": "29,5 jours" }
+          ],
+          "correct_answer": "C",
+          "explanation": "La Terre prend environ 365,25 jours (une année) pour compléter une orbite autour du Soleil."
+        },
+        {
+          "id": "esp_014",
+          "question": "Quelle est la «nuit polaire»?",
+          "question_en": "What is the 'polar night'?",
+          "choices": [
+            { "label": "A", "text": "Une nuit très froide" },
+            { "label": "B", "text": "Un phénomène où le Soleil ne se lève pas pendant 24 heures dans les régions polaires en hiver" },
+            { "label": "C", "text": "Une éclipse qui dure toute la nuit" },
+            { "label": "D", "text": "Une nuit avec beaucoup d'étoiles" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La nuit polaire est le phénomène opposé au soleil de minuit: dans les régions proches des pôles en hiver, le Soleil ne se lève pas pendant 24 heures ou plus."
+        },
+        {
+          "id": "esp_015",
+          "question": "Quelle phase de la Lune voit-on quand la Lune est complètement illuminée?",
+          "question_en": "What Moon phase do we see when the Moon is fully lit?",
+          "choices": [
+            { "label": "A", "text": "Nouvelle lune" },
+            { "label": "B", "text": "Premier quartier" },
+            { "label": "C", "text": "Pleine lune" },
+            { "label": "D", "text": "Dernier quartier" }
+          ],
+          "correct_answer": "C",
+          "explanation": "La pleine lune est la phase où la face entière de la Lune visible depuis la Terre est illuminée par le Soleil."
+        }
+      ]
+    },
+    {
+      "unit_id": "informatique",
+      "unit_name": "Informatique",
+      "unit_name_en": "Computer Science",
+      "organizing_idea": "Les élèves appliquent des processus de conception lors de la création d'artéfacts qui peuvent être utilisés par un humain ou une machine pour répondre à un besoin.",
+      "organizing_idea_en": "Students apply design processes when creating artifacts that can be used by a human or machine to address a need.",
+      "key_topics": [
+        "Processus de conception et artéfacts computationnels",
+        "Blocs de code et résultats",
+        "Exécution de blocs de code simples et multiples",
+        "Traduction d'algorithmes en code visuel par blocs",
+        "Algorithmes avec boucles",
+        "Amélioration et raffinement de conceptions",
+        "Évaluation d'un artéfact",
+        "Conception d'un artéfact pour répondre à un besoin",
+        "Itérations multiples d'un artéfact",
+        "Collaboration pour améliorer un artéfact"
+      ],
+      "questions": [
+        {
+          "id": "inf_001",
+          "question": "Qu'est-ce qu'un algorithme?",
+          "question_en": "What is an algorithm?",
+          "choices": [
+            { "label": "A", "text": "Un type d'ordinateur" },
+            { "label": "B", "text": "Une série d'étapes ordonnées pour résoudre un problème ou accomplir une tâche" },
+            { "label": "C", "text": "Un jeu vidéo" },
+            { "label": "D", "text": "Un câble d'ordinateur" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un algorithme est une suite d'instructions précises et ordonnées qui permettent de résoudre un problème ou d'accomplir une tâche."
+        },
+        {
+          "id": "inf_002",
+          "question": "Qu'est-ce qu'un bloc de code dans la programmation visuelle?",
+          "question_en": "What is a code block in visual programming?",
+          "choices": [
+            { "label": "A", "text": "Un bloc de construction en plastique" },
+            { "label": "B", "text": "Une pièce de puzzle colorée qui représente une instruction informatique" },
+            { "label": "C", "text": "Un livre de codes" },
+            { "label": "D", "text": "Un mot de passe" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Dans la programmation visuelle par blocs (comme Scratch), chaque bloc représente une instruction ou une commande. On assemble les blocs comme des pièces de puzzle pour créer un programme."
+        },
+        {
+          "id": "inf_003",
+          "question": "Qu'est-ce qu'une boucle en programmation?",
+          "question_en": "What is a loop in programming?",
+          "choices": [
+            { "label": "A", "text": "Une erreur dans le code" },
+            { "label": "B", "text": "Une instruction qui répète un ensemble de commandes un certain nombre de fois ou jusqu'à ce qu'une condition soit remplie" },
+            { "label": "C", "text": "Un câble circulaire" },
+            { "label": "D", "text": "Un type de fichier" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une boucle permet de répéter automatiquement un ensemble d'instructions. Par exemple, «répéter 5 fois: avancer de 10 pas» exécute l'action 5 fois sans avoir à l'écrire 5 fois."
+        },
+        {
+          "id": "inf_004",
+          "question": "Si un bloc de code dit «avancer de 10 pas» et est placé dans une boucle «répéter 4 fois», combien de pas au total le personnage fera-t-il?",
+          "question_en": "If a code block says 'move 10 steps' and is placed in a 'repeat 4 times' loop, how many total steps will the character take?",
+          "choices": [
+            { "label": "A", "text": "10 pas" },
+            { "label": "B", "text": "14 pas" },
+            { "label": "C", "text": "40 pas" },
+            { "label": "D", "text": "4 pas" }
+          ],
+          "correct_answer": "C",
+          "explanation": "La boucle répète l'action 4 fois: 10 + 10 + 10 + 10 = 40 pas au total."
+        },
+        {
+          "id": "inf_005",
+          "question": "Qu'est-ce que le processus de conception (design process)?",
+          "question_en": "What is the design process?",
+          "choices": [
+            { "label": "A", "text": "Dessiner une image" },
+            { "label": "B", "text": "Un processus itératif: identifier un besoin, planifier, créer, tester, améliorer" },
+            { "label": "C", "text": "Copier le travail de quelqu'un d'autre" },
+            { "label": "D", "text": "Acheter un produit en magasin" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Le processus de conception est un cycle: identifier un problème/besoin → planifier une solution → créer un prototype → tester → évaluer → améliorer → recommencer si nécessaire."
+        },
+        {
+          "id": "inf_006",
+          "question": "Qu'est-ce qu'un artéfact computationnel?",
+          "question_en": "What is a computational artifact?",
+          "choices": [
+            { "label": "A", "text": "Un objet ancien trouvé par des archéologues" },
+            { "label": "B", "text": "Quelque chose créé par un humain en utilisant un ordinateur (programme, animation, site web, etc.)" },
+            { "label": "C", "text": "Un ordinateur cassé" },
+            { "label": "D", "text": "Un livre écrit à la main" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un artéfact computationnel est tout ce qui est créé à l'aide d'un ordinateur pour répondre à un besoin: un programme, une animation, un jeu, un site web, une simulation, etc."
+        },
+        {
+          "id": "inf_007",
+          "question": "Pourquoi est-il important de créer plusieurs versions (itérations) d'un artéfact?",
+          "question_en": "Why is it important to create multiple versions (iterations) of an artifact?",
+          "choices": [
+            { "label": "A", "text": "Pour perdre du temps" },
+            { "label": "B", "text": "Pour améliorer le produit à chaque version en corrigeant les problèmes et en ajoutant des améliorations" },
+            { "label": "C", "text": "Pour avoir plus de fichiers" },
+            { "label": "D", "text": "La première version est toujours parfaite" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Chaque itération permet de tester, identifier les problèmes et améliorer l'artéfact. Rarement un premier essai est parfait — l'amélioration continue mène à un meilleur produit final."
+        },
+        {
+          "id": "inf_008",
+          "question": "Que se passera-t-il si on exécute ces blocs de code dans l'ordre: «avancer de 5 pas» puis «tourner à droite de 90 degrés»?",
+          "question_en": "What will happen if you execute: 'move forward 5 steps' then 'turn right 90 degrees'?",
+          "choices": [
+            { "label": "A", "text": "Le personnage avancera et tournera en même temps" },
+            { "label": "B", "text": "Le personnage avancera de 5 pas, puis tournera à droite" },
+            { "label": "C", "text": "Le personnage ne bougera pas" },
+            { "label": "D", "text": "Le personnage tournera d'abord puis avancera" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les blocs de code s'exécutent dans l'ordre (séquentiellement). D'abord le personnage avance de 5 pas, puis il tourne à droite de 90 degrés."
+        },
+        {
+          "id": "inf_009",
+          "question": "Comment la collaboration peut-elle améliorer un artéfact?",
+          "question_en": "How can collaboration improve an artifact?",
+          "choices": [
+            { "label": "A", "text": "En ayant une seule personne qui fait tout" },
+            { "label": "B", "text": "En partageant différentes idées, perspectives et compétences pour trouver de meilleures solutions" },
+            { "label": "C", "text": "En copiant le travail des autres" },
+            { "label": "D", "text": "La collaboration n'aide pas" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La collaboration permet de combiner différentes idées, perspectives et compétences. D'autres personnes peuvent voir des problèmes ou des améliorations que l'on n'aurait pas vus seul."
+        },
+        {
+          "id": "inf_010",
+          "question": "Pour dessiner un carré avec un programme par blocs, quel algorithme utiliserais-tu?",
+          "question_en": "To draw a square with a block program, what algorithm would you use?",
+          "choices": [
+            { "label": "A", "text": "Avancer, tourner 45°, répéter 8 fois" },
+            { "label": "B", "text": "Avancer, tourner 90°, répéter 4 fois" },
+            { "label": "C", "text": "Avancer, tourner 60°, répéter 6 fois" },
+            { "label": "D", "text": "Avancer, tourner 180°, répéter 2 fois" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un carré a 4 côtés et 4 angles de 90°. L'algorithme est: répéter 4 fois (avancer + tourner de 90°)."
+        }
+      ]
+    },
+    {
+      "unit_id": "methodes_scientifiques",
+      "unit_name": "Méthodes scientifiques",
+      "unit_name_en": "Scientific Methods",
+      "organizing_idea": "Les élèves étudient comment les preuves sont recueillies et expliquent l'importance de l'éthique en science.",
+      "organizing_idea_en": "Students investigate how evidence is gathered and explain the importance of ethics in science.",
+      "key_topics": [
+        "Technologies qui fournissent des preuves indirectes",
+        "Identification des biais dans une investigation",
+        "Planification et conduite d'une expérience contrôlée",
+        "Variables dans une expérience contrôlée (manipulée, répondante, contrôlée)",
+        "Vocabulaire des variables en contexte scientifique",
+        "Évaluation de l'effet de la variable manipulée",
+        "Défense d'une conclusion basée sur des preuves",
+        "Représentations diverses des données",
+        "Communication claire et précise des preuves",
+        "Éthique scientifique",
+        "Démonstration de l'éthique lors des investigations"
+      ],
+      "questions": [
+        {
+          "id": "met_001",
+          "question": "Quelles sont les étapes de la méthode scientifique dans le bon ordre?",
+          "question_en": "What are the steps of the scientific method in the correct order?",
+          "choices": [
+            { "label": "A", "text": "Conclure → Observer → Expérimenter → Questionner" },
+            { "label": "B", "text": "Observer/Questionner → Formuler une hypothèse → Expérimenter → Analyser les résultats → Conclure" },
+            { "label": "C", "text": "Expérimenter → Observer → Conclure → Questionner" },
+            { "label": "D", "text": "Hypothèse → Conclure → Observer → Expérimenter" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La méthode scientifique suit ces étapes: 1) Observer et poser une question 2) Formuler une hypothèse 3) Planifier et réaliser une expérience 4) Recueillir et analyser les données 5) Tirer une conclusion."
+        },
+        {
+          "id": "met_002",
+          "question": "Qu'est-ce qu'une expérience contrôlée?",
+          "question_en": "What is a controlled experiment?",
+          "choices": [
+            { "label": "A", "text": "Une expérience où on change tout en même temps" },
+            { "label": "B", "text": "Une expérience où on change une seule variable à la fois et garde tout le reste pareil" },
+            { "label": "C", "text": "Une expérience sans matériel" },
+            { "label": "D", "text": "Une expérience faite par un adulte seulement" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Dans une expérience contrôlée, on ne change qu'une seule variable (la variable manipulée) et on garde toutes les autres conditions identiques pour que le test soit juste."
+        },
+        {
+          "id": "met_003",
+          "question": "Qu'est-ce que la variable manipulée (indépendante)?",
+          "question_en": "What is the manipulated (independent) variable?",
+          "choices": [
+            { "label": "A", "text": "Ce que tu mesures à la fin de l'expérience" },
+            { "label": "B", "text": "Ce que tu changes intentionnellement dans l'expérience" },
+            { "label": "C", "text": "Ce que tu gardes pareil" },
+            { "label": "D", "text": "Le titre de l'expérience" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La variable manipulée (indépendante) est le facteur que le scientifique change intentionnellement pour observer son effet."
+        },
+        {
+          "id": "met_004",
+          "question": "Qu'est-ce que la variable répondante (dépendante)?",
+          "question_en": "What is the responding (dependent) variable?",
+          "choices": [
+            { "label": "A", "text": "Ce que tu changes dans l'expérience" },
+            { "label": "B", "text": "Ce que tu observes ou mesures comme résultat de l'expérience" },
+            { "label": "C", "text": "Ce que tu gardes pareil" },
+            { "label": "D", "text": "L'hypothèse" }
+          ],
+          "correct_answer": "B",
+          "explanation": "La variable répondante (dépendante) est ce que tu observes ou mesures. Elle «répond» aux changements de la variable manipulée."
+        },
+        {
+          "id": "met_005",
+          "question": "Qu'est-ce qu'une variable contrôlée?",
+          "question_en": "What is a controlled variable?",
+          "choices": [
+            { "label": "A", "text": "La variable que tu changes" },
+            { "label": "B", "text": "La variable que tu mesures" },
+            { "label": "C", "text": "Tous les facteurs que tu gardes les mêmes pendant l'expérience pour que le test soit juste" },
+            { "label": "D", "text": "Le résultat final" }
+          ],
+          "correct_answer": "C",
+          "explanation": "Les variables contrôlées sont tous les facteurs que tu gardes identiques pendant l'expérience. Cela assure que seul le changement de la variable manipulée affecte les résultats."
+        },
+        {
+          "id": "met_006",
+          "question": "Dans une expérience sur la croissance des plantes, tu changes la quantité de lumière. Quelle est la variable manipulée?",
+          "question_en": "In an experiment on plant growth, you change the amount of light. What is the manipulated variable?",
+          "choices": [
+            { "label": "A", "text": "La croissance de la plante" },
+            { "label": "B", "text": "La quantité d'eau" },
+            { "label": "C", "text": "La quantité de lumière" },
+            { "label": "D", "text": "Le type de sol" }
+          ],
+          "correct_answer": "C",
+          "explanation": "La quantité de lumière est la variable manipulée car c'est ce que tu changes intentionnellement. La croissance de la plante serait la variable répondante."
+        },
+        {
+          "id": "met_007",
+          "question": "Qu'est-ce qu'un biais dans une investigation scientifique?",
+          "question_en": "What is a bias in a scientific investigation?",
+          "choices": [
+            { "label": "A", "text": "Un résultat correct" },
+            { "label": "B", "text": "Une préférence ou un préjugé qui peut influencer les résultats de manière injuste" },
+            { "label": "C", "text": "Un type d'instrument" },
+            { "label": "D", "text": "Une hypothèse" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Un biais est une préférence, un préjugé ou une erreur systématique qui peut fausser les résultats d'une investigation. Les scientifiques doivent identifier et minimiser les biais."
+        },
+        {
+          "id": "met_008",
+          "question": "Donne un exemple de biais dans une expérience.",
+          "question_en": "Give an example of bias in an experiment.",
+          "choices": [
+            { "label": "A", "text": "Utiliser le même instrument pour toutes les mesures" },
+            { "label": "B", "text": "Ne mesurer que les résultats qui confirment ton hypothèse et ignorer les autres" },
+            { "label": "C", "text": "Répéter l'expérience plusieurs fois" },
+            { "label": "D", "text": "Enregistrer tous les résultats avec précision" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Ignorer les résultats qui ne confirment pas ton hypothèse est un biais de confirmation. Un bon scientifique enregistre TOUS les résultats, même ceux qui contredisent son hypothèse."
+        },
+        {
+          "id": "met_009",
+          "question": "Pourquoi l'éthique est-elle importante en science?",
+          "question_en": "Why is ethics important in science?",
+          "choices": [
+            { "label": "A", "text": "Elle n'est pas importante" },
+            { "label": "B", "text": "Pour s'assurer que la recherche est honnête, juste, respectueuse et ne cause pas de tort" },
+            { "label": "C", "text": "Pour rendre les expériences plus difficiles" },
+            { "label": "D", "text": "Pour que les scientifiques gagnent plus d'argent" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'éthique scientifique assure que la recherche est conduite de manière honnête (pas de falsification), respectueuse (envers les êtres vivants), et que les résultats sont rapportés avec précision."
+        },
+        {
+          "id": "met_010",
+          "question": "Quel est un exemple d'éthique scientifique en classe?",
+          "question_en": "What is an example of scientific ethics in the classroom?",
+          "choices": [
+            { "label": "A", "text": "Copier les résultats d'un autre élève" },
+            { "label": "B", "text": "Enregistrer honnêtement tous les résultats, même s'ils ne correspondent pas à l'hypothèse" },
+            { "label": "C", "text": "Changer les données pour avoir une meilleure note" },
+            { "label": "D", "text": "Ignorer les consignes de sécurité" }
+          ],
+          "correct_answer": "B",
+          "explanation": "L'éthique scientifique inclut l'honnêteté: enregistrer tous les résultats fidèlement, ne pas inventer ou modifier des données, et traiter le matériel et les êtres vivants avec respect."
+        },
+        {
+          "id": "met_011",
+          "question": "Pourquoi est-il important de représenter les données de différentes façons (graphiques, tableaux, diagrammes)?",
+          "question_en": "Why is it important to represent data in different ways (graphs, tables, diagrams)?",
+          "choices": [
+            { "label": "A", "text": "Pour rendre le travail plus joli" },
+            { "label": "B", "text": "Différentes représentations aident à communiquer les résultats clairement et à voir des tendances" },
+            { "label": "C", "text": "Ce n'est pas important" },
+            { "label": "D", "text": "Parce que le professeur l'exige" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Différentes représentations (graphiques à barres, diagrammes circulaires, tableaux) permettent de mieux voir les tendances dans les données et de communiquer les résultats de manière claire."
+        },
+        {
+          "id": "met_012",
+          "question": "Quelles technologies aident les scientifiques à observer ce que les sens humains ne peuvent pas détecter?",
+          "question_en": "What technologies help scientists observe what human senses cannot detect?",
+          "choices": [
+            { "label": "A", "text": "Des crayons et du papier" },
+            { "label": "B", "text": "Des microscopes, télescopes, capteurs et satellites" },
+            { "label": "C", "text": "Des livres de cuisine" },
+            { "label": "D", "text": "Des instruments de musique" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Les microscopes permettent de voir de très petits objets, les télescopes de voir des objets éloignés dans l'espace, les capteurs de détecter des changements invisibles, et les satellites de surveiller la Terre depuis l'espace."
+        },
+        {
+          "id": "met_013",
+          "question": "Que signifie «défendre une conclusion» en science?",
+          "question_en": "What does 'defending a conclusion' mean in science?",
+          "choices": [
+            { "label": "A", "text": "Se battre avec un autre scientifique" },
+            { "label": "B", "text": "Expliquer pourquoi ta conclusion est soutenue par les preuves de ton expérience" },
+            { "label": "C", "text": "Cacher ta conclusion" },
+            { "label": "D", "text": "Changer ta conclusion pour qu'elle plaise aux autres" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Défendre une conclusion signifie expliquer et justifier ta conclusion en utilisant les données et les preuves recueillies pendant l'expérience."
+        },
+        {
+          "id": "met_014",
+          "question": "Que pourrait-il arriver si les preuves scientifiques ne sont pas communiquées clairement?",
+          "question_en": "What could happen if scientific evidence is not communicated clearly?",
+          "choices": [
+            { "label": "A", "text": "Rien de grave" },
+            { "label": "B", "text": "Les gens pourraient mal interpréter les résultats et prendre de mauvaises décisions" },
+            { "label": "C", "text": "Les scientifiques gagneraient plus d'argent" },
+            { "label": "D", "text": "L'expérience serait automatiquement réussie" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Si les preuves ne sont pas communiquées clairement et précisément, les gens pourraient mal comprendre les résultats, ce qui pourrait mener à de mauvaises décisions en santé, environnement, etc."
+        },
+        {
+          "id": "met_015",
+          "question": "Qu'est-ce qu'une hypothèse?",
+          "question_en": "What is a hypothesis?",
+          "choices": [
+            { "label": "A", "text": "Un fait prouvé" },
+            { "label": "B", "text": "Une prédiction testable qui propose une explication possible" },
+            { "label": "C", "text": "Le résultat final d'une expérience" },
+            { "label": "D", "text": "Une question sans réponse" }
+          ],
+          "correct_answer": "B",
+          "explanation": "Une hypothèse est une prédiction testable, souvent formulée sous la forme «Si... alors... parce que...». Elle propose une explication qui peut être vérifiée par une expérience."
+        }
+      ]
+    }
+  ]
+}

@@ -64,6 +64,29 @@ function selectAnswer(selectedIndex, lessonData) {
     const isCorrect = selectedIndex === question.correct;
     if (isCorrect) {
         correctAnswers++;
+        
+        // Fun Mode: Show celebration on correct answer
+        if (typeof currentMode !== 'undefined' && currentMode === 'fun') {
+            showCelebration();
+        }
+    } else {
+        // Wrong answer ends the streak
+        resetStreak();
+        
+        // Fun Mode: Show shake animation on wrong answer
+        if (typeof currentMode !== 'undefined' && currentMode === 'fun') {
+            showWrongAnimation();
+        }
+        
+        // Challenge Mode: Lose a life
+        if (typeof currentMode !== 'undefined' && currentMode === 'challenge') {
+            const alive = loseLife();
+            if (!alive) {
+                // Game over - no more lives
+                setTimeout(() => showGameOver(), 1000);
+                return; // Don't continue to next question
+            }
+        }
     }
     recordAnswer(isCorrect);
     
@@ -72,6 +95,10 @@ function selectAnswer(selectedIndex, lessonData) {
         currentQuestionIndex++;
         
         if (currentQuestionIndex < lessonData.questions.length) {
+            // Speedrun: Reset timer for next question (with less time!)
+            if (typeof currentMode !== 'undefined' && currentMode === 'speedrun') {
+                nextSpeedrunQuestion();
+            }
             showQuestion(lessonData);
         } else {
             showCompletion(lessonData);
@@ -90,8 +117,67 @@ function showCompletion(lessonData) {
     // Increment streak for completing a lesson
     incrementStreak();
     
-    // Calculate XP earned this session
+    // Calculate base XP earned this session
     const xpEarned = correctAnswers * XP_PER_CORRECT;
+    let bonusXP = 0;
+    
+    // Hide bonus elements by default
+    const bonusEl = document.getElementById('bonus-xp');
+    const timeEl = document.getElementById('time-result');
+    const livesEl = document.getElementById('lives-result');
+    const titleEl = document.getElementById('completion-title');
+    
+    if (bonusEl) bonusEl.classList.add('hidden');
+    if (timeEl) timeEl.classList.add('hidden');
+    if (livesEl) livesEl.classList.add('hidden');
+    if (titleEl) titleEl.textContent = 'Lesson Complete!';
+    
+    // Mode-specific completion logic
+    if (typeof currentMode !== 'undefined') {
+        
+        // Speedrun Mode: Calculate completion bonus
+        if (currentMode === 'speedrun') {
+            stopTimer();
+            bonusXP = calculateSpeedBonus(lessonData.questions.length);
+            
+            if (timeEl) {
+                timeEl.classList.remove('hidden');
+                timeEl.textContent = `⚡ Completed all ${lessonData.questions.length} questions!`;
+            }
+            if (titleEl) titleEl.textContent = '🌟 Speed Run Complete!';
+        }
+        
+        // Challenge Mode: Calculate survival bonus
+        if (currentMode === 'challenge') {
+            bonusXP = calculateChallengeBonus(livesRemaining);
+            
+            if (livesEl) {
+                livesEl.classList.remove('hidden');
+                const hearts = '❤️'.repeat(livesRemaining);
+                livesEl.textContent = `Lives remaining: ${hearts}`;
+            }
+            if (titleEl) titleEl.textContent = 'Challenge Complete!';
+        }
+        
+        // Fun Mode: Extra celebration
+        if (currentMode === 'fun') {
+            if (titleEl) titleEl.textContent = '🎉 Awesome Job! 🎉';
+            spawnConfetti();
+        }
+    }
+    
+    // Award bonus XP if any
+    if (bonusXP > 0) {
+        // Add bonus XP to total
+        const currentXP = getXP();
+        saveXP(currentXP + bonusXP);
+        updateStatsDisplay();
+        
+        if (bonusEl) {
+            bonusEl.classList.remove('hidden');
+            bonusEl.textContent = `🌟 Bonus: +${bonusXP} XP!`;
+        }
+    }
     
     // Update completion message
     const xpEarnedElement = document.getElementById('xp-earned');

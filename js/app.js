@@ -41,6 +41,11 @@ function incrementStreak() {
     localStorage.setItem('streak', current + 1);
 }
 
+function resetStreak() {
+    localStorage.setItem('streak', 0);
+    updateStatsDisplay();
+}
+
 // ========== CALCULATIONS ==========
 
 function getLevel(xp) {

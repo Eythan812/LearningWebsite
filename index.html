@@ -20,11 +20,50 @@
                         <span class="tagline">Level up your brain</span>
                     </div>
                 </div>
-                <div class="streak-badge">
-                    <span class="streak-icon">🔥</span>
-                    <span class="streak-count" id="streak">0</span>
+                <div class="header-actions">
+                    <div class="streak-badge">
+                        <span class="streak-icon">🔥</span>
+                        <span class="streak-count" id="streak">0</span>
+                    </div>
+                    <button class="theme-btn" onclick="toggleThemeMenu()">
+                        <span>🎨</span>
+                    </button>
                 </div>
             </header>
+
+            <!-- Theme Popup Menu -->
+            <div id="theme-popup" class="theme-popup hidden">
+                <div class="theme-popup-header">
+                    <span>🎨 Themes</span>
+                    <button class="theme-close" onclick="toggleThemeMenu()">×</button>
+                </div>
+                <div class="theme-options">
+                    <button class="theme-option" onclick="setTheme('normal')">
+                        <span class="theme-preview normal-preview"></span>
+                        <span class="theme-name">Normal</span>
+                    </button>
+                    <button class="theme-option" onclick="setTheme('japanese')">
+                        <span class="theme-preview japanese-preview"></span>
+                        <span class="theme-name">Japanese</span>
+                    </button>
+                    <button class="theme-option" onclick="setTheme('basic')">
+                        <span class="theme-preview basic-preview"></span>
+                        <span class="theme-name">Basic</span>
+                    </button>
+                    <button class="theme-option" onclick="setTheme('dark')">
+                        <span class="theme-preview dark-preview"></span>
+                        <span class="theme-name">Dark</span>
+                    </button>
+                    <button class="theme-option" onclick="setTheme('car')">
+                        <span class="theme-preview car-preview"></span>
+                        <span class="theme-name">Racing</span>
+                    </button>
+                    <button class="theme-option" onclick="setTheme('retro')">
+                        <span class="theme-preview retro-preview"></span>
+                        <span class="theme-name">Retro</span>
+                    </button>
+                </div>
+            </div>
 
             <!-- Player Stats Card - Stretched -->
             <section class="player-card">
@@ -103,16 +142,15 @@
                 <!-- Play Section - Right Side -->
                 <section class="play-section">
                     <h3 class="play-title">🎮 Play</h3>
-                    <button class="play-card" onclick="startLesson()">
+                    <button class="play-card" onclick="showSubjectSelection()">
                         <div class="play-icon-wrapper">
                             <span class="play-icon">▶</span>
                         </div>
                         <div class="play-info">
-                            <span class="play-name">Basic Math</span>
-                            <span class="play-desc">+, −, ×, ÷</span>
+                            <span class="play-name">Start Learning</span>
+                            <span class="play-desc">Choose a subject</span>
                         </div>
                         <div class="play-meta">
-                            <span class="meta-questions">3 Q</span>
                             <span class="meta-xp">+5 XP</span>
                         </div>
                     </button>
@@ -128,18 +166,180 @@
             </footer>
         </div>
 
+        <!-- ========== SUBJECT SELECTION SCREEN ========== -->
+        <div id="subject-screen" class="hidden">
+            <div class="subject-header">
+                <button class="back-btn" onclick="returnToMenu()">←</button>
+                <h1>What do you want to learn?</h1>
+            </div>
+            
+            <div class="subject-grid">
+                <!-- Math Subject -->
+                <button class="subject-card math-card" onclick="selectSubject('math')">
+                    <div class="subject-icon">📝</div>
+                    <div class="subject-info">
+                        <span class="subject-name">Math</span>
+                        <span class="subject-desc">Addition, Subtraction, Multiplication, Division</span>
+                    </div>
+                    <div class="subject-meta">
+                        <span>3 Questions</span>
+                        <span>+5 XP each</span>
+                    </div>
+                </button>
+
+                <!-- Science Subject -->
+                <button class="subject-card science-card" onclick="showScienceUnits()">
+                    <div class="subject-icon">🔬</div>
+                    <div class="subject-info">
+                        <span class="subject-name">Sciences</span>
+                        <span class="subject-desc">7 Unités: Matière, Énergie, Espace et plus!</span>
+                    </div>
+                    <div class="subject-meta">
+                        <span>7 Unités</span>
+                        <span>+5 XP chaque</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="subject-hint">
+                <span>🌟 Pick a subject to begin!</span>
+            </div>
+        </div>
+
+        <!-- ========== SCIENCE UNIT SELECTION ========== -->
+        <div id="science-units-screen" class="hidden">
+            <div class="subject-header">
+                <button class="back-btn" onclick="backToSubjectsFromUnits()">←</button>
+                <h1>🔬 Choisis un sujet de sciences</h1>
+            </div>
+            
+            <div class="units-grid">
+                <button class="unit-card" onclick="selectScienceUnit('matiere')">
+                    <span class="unit-icon">⚛️</span>
+                    <span class="unit-name">La matière</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('energie')">
+                    <span class="unit-icon">⚡</span>
+                    <span class="unit-name">Énergie</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('climat')">
+                    <span class="unit-icon">🌍</span>
+                    <span class="unit-name">Climat et météo</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('systemes-vivants')">
+                    <span class="unit-icon">🫀</span>
+                    <span class="unit-name">Systèmes vivants</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('espace')">
+                    <span class="unit-icon">🌌</span>
+                    <span class="unit-name">Espace</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('informatique')">
+                    <span class="unit-icon">💻</span>
+                    <span class="unit-name">Informatique</span>
+                </button>
+                <button class="unit-card" onclick="selectScienceUnit('methodes')">
+                    <span class="unit-icon">🔬</span>
+                    <span class="unit-name">Méthodes scientifiques</span>
+                </button>
+            </div>
+            
+            <div class="subject-hint">
+                <span>🎯 Chaque sujet a 10-23 questions!</span>
+            </div>
+        </div>
+
+        <!-- ========== MODE SELECTION SCREEN ========== -->
+        <div id="mode-screen" class="hidden">
+            <div class="mode-header">
+                <button class="back-btn" onclick="backToSubjects()">←</button>
+                <h1>Choose Your Mode</h1>
+            </div>
+            
+            <div class="mode-grid">
+                <!-- Learn Mode -->
+                <button class="mode-card learn-card" onclick="startMode('learn')">
+                    <div class="mode-icon">📚</div>
+                    <div class="mode-info">
+                        <span class="mode-name">Learn Mode</span>
+                        <span class="mode-desc">Take your time, no pressure</span>
+                    </div>
+                    <div class="mode-meta">
+                        <span>+5 XP per answer</span>
+                    </div>
+                </button>
+
+                <!-- Speedrun Mode -->
+                <button class="mode-card speedrun-card" onclick="startMode('speedrun')">
+                    <div class="mode-icon">⏱️</div>
+                    <div class="mode-info">
+                        <span class="mode-name">Speedrun Mode</span>
+                        <span class="mode-desc">10 questions, timer gets faster!</span>
+                    </div>
+                    <div class="mode-meta">
+                        <span>10s → 9s → 8s...</span>
+                    </div>
+                </button>
+
+                <!-- Fun Mode -->
+                <button class="mode-card fun-card" onclick="startMode('fun')">
+                    <div class="mode-icon">🎉</div>
+                    <div class="mode-info">
+                        <span class="mode-name">Fun Mode</span>
+                        <span class="mode-desc">Celebrations & animations!</span>
+                    </div>
+                    <div class="mode-meta">
+                        <span>+5 XP per answer</span>
+                    </div>
+                </button>
+
+                <!-- Challenge Mode -->
+                <button class="mode-card challenge-card" onclick="startMode('challenge')">
+                    <div class="mode-icon">💪</div>
+                    <div class="mode-info">
+                        <span class="mode-name">Challenge Mode</span>
+                        <span class="mode-desc">3 lives only - don't fail!</span>
+                    </div>
+                    <div class="mode-meta">
+                        <span>Bonus XP for survival!</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="mode-hint">
+                <span>🎮 Pick a mode to start!</span>
+            </div>
+        </div>
+
         <!-- ========== LESSON SCREEN ========== -->
         <div id="lesson-screen" class="hidden">
             <div class="lesson-header">
-                <button class="back-btn" onclick="returnToMenu()">←</button>
-                <h1>Basic Math</h1>
+                <button class="back-btn" onclick="backToModes()">←</button>
+                <h1 id="lesson-title">Basic Math</h1>
                 <div class="header-stats">
+                    <!-- Timer for Speedrun Mode -->
+                    <div class="timer-display hidden" id="timer-display">
+                        <span class="timer-icon">⏱️</span>
+                        <span class="timer-value" id="timer-value">0.0s</span>
+                    </div>
+                    <!-- Lives for Challenge Mode -->
+                    <div class="lives-display hidden" id="lives-display">
+                        <span class="lives-hearts" id="lives-hearts">❤️❤️❤️</span>
+                    </div>
+                    <!-- Mode Badge -->
+                    <span class="mode-badge" id="mode-badge">📚 Learn</span>
                     <span class="header-level">Lv.<span id="lesson-level">1</span></span>
                     <div class="header-xp-bar">
                         <div class="xp-fill" id="lesson-xp-fill"></div>
                     </div>
                     <span class="header-xp" id="lesson-xp-text">0/30</span>
                 </div>
+            </div>
+
+            <!-- Fun Mode Celebration Container -->
+            <div class="celebration-container hidden" id="celebration-container">
+                <div class="celebration-emoji" id="celebration-emoji"></div>
+                <div class="celebration-message" id="celebration-message"></div>
             </div>
 
             <!-- Question Card -->
@@ -152,10 +352,22 @@
             <!-- Completion Card -->
             <div class="completion-card hidden" id="completion-card">
                 <div class="icon">🎉</div>
-                <h2>Lesson Complete!</h2>
+                <h2 id="completion-title">Lesson Complete!</h2>
                 <p id="score"></p>
                 <p class="xp-earned" id="xp-earned">+0 XP</p>
+                <p class="bonus-xp hidden" id="bonus-xp"></p>
+                <p class="time-result hidden" id="time-result"></p>
+                <p class="lives-result hidden" id="lives-result"></p>
                 <button class="home-btn" onclick="returnToMenu()">Continue</button>
+            </div>
+
+            <!-- Game Over Card (Challenge Mode) -->
+            <div class="gameover-card hidden" id="gameover-card">
+                <div class="icon">💔</div>
+                <h2>Game Over!</h2>
+                <p id="gameover-score"></p>
+                <p class="gameover-message">You ran out of lives!</p>
+                <button class="home-btn" onclick="returnToMenu()">Try Again</button>
             </div>
         </div>
 
@@ -233,7 +445,7 @@
             };
         }
 
-        function generateLessonData() {
+        function generateMathLesson() {
             const questions = [];
             for (let i = 0; i < NUM_QUESTIONS; i++) {
                 questions.push(generateQuestion());
@@ -241,38 +453,1404 @@
             return {
                 id: "math-1",
                 title: "Basic Math",
+                subject: "Math",
                 questions: questions
             };
         }
 
         // ===========================================
+        // SCIENCE LESSON - Grade 5 Weather (Alberta Curriculum)
+        // ===========================================
+        
+        /*
+        📚 LESSON SUMMARY (Grade 5 - Weather Watch)
+        
+        Weather is what's happening in the sky RIGHT NOW - is it sunny, rainy, 
+        or snowy today? Scientists called meteorologists use special tools to 
+        measure and predict weather:
+        
+        🌡️ Thermometer - measures temperature (how hot or cold)
+        🎈 Barometer - measures air pressure (helps predict storms!)
+        💨 Anemometer - measures wind speed (how fast wind blows)
+        🧭 Wind Vane - shows wind direction (which way wind comes from)
+        🌧️ Rain Gauge - measures how much rain falls
+        
+        Clouds tell us about weather too! Fluffy cumulus clouds mean nice 
+        weather, while dark cumulonimbus clouds bring thunderstorms!
+        */
+        
+        // Question bank - 30 questions about Grade 5 Weather
+        const weatherQuestionBank = [
+            // WEATHER INSTRUMENTS (10 questions)
+            {
+                question: "Which weather instrument measures wind SPEED?",
+                options: ["Thermometer", "Barometer", "Anemometer", "Rain Gauge"],
+                correct: 2
+            },
+            {
+                question: "What does a THERMOMETER measure?",
+                options: ["Wind speed", "Temperature", "Rainfall", "Air pressure"],
+                correct: 1
+            },
+            {
+                question: "Which tool would a meteorologist use to find out WHERE the wind is coming from?",
+                options: ["Anemometer", "Wind Vane", "Thermometer", "Rain Gauge"],
+                correct: 1
+            },
+            {
+                question: "A BAROMETER measures which of these?",
+                options: ["Temperature", "Humidity", "Air Pressure", "Wind Speed"],
+                correct: 2
+            },
+            {
+                question: "What tool collects and measures how much rain has fallen?",
+                options: ["Barometer", "Anemometer", "Thermometer", "Rain Gauge"],
+                correct: 3
+            },
+            {
+                question: "A HYGROMETER measures the amount of _____ in the air.",
+                options: ["Oxygen", "Water vapor (humidity)", "Carbon dioxide", "Dust"],
+                correct: 1
+            },
+            {
+                question: "Which instrument has spinning cups that catch the wind?",
+                options: ["Thermometer", "Barometer", "Anemometer", "Hygrometer"],
+                correct: 2
+            },
+            {
+                question: "What does a wind vane look like?",
+                options: ["A spinning cup", "An arrow that points", "A glass tube", "A bucket"],
+                correct: 1
+            },
+            {
+                question: "Scientists who study and predict weather are called:",
+                options: ["Biologists", "Meteorologists", "Geologists", "Astronomers"],
+                correct: 1
+            },
+            {
+                question: "Weather satellites help us by:",
+                options: ["Making it rain", "Taking pictures of clouds from space", "Stopping storms", "Creating wind"],
+                correct: 1
+            },
+
+            // CLOUDS (8 questions)
+            {
+                question: "What are the BIG, fluffy clouds that look like cotton balls called?",
+                options: ["Stratus", "Cirrus", "Cumulus", "Fog"],
+                correct: 2
+            },
+            {
+                question: "STRATUS clouds are flat and spread out like a ______.",
+                options: ["Cotton ball", "Blanket or sheet", "Tall tower", "Feather"],
+                correct: 1
+            },
+            {
+                question: "Which clouds are thin, wispy, and very HIGH in the sky?",
+                options: ["Cumulus", "Stratus", "Cirrus", "Cumulonimbus"],
+                correct: 2
+            },
+            {
+                question: "CUMULONIMBUS clouds bring:",
+                options: ["Sunny days", "Thunderstorms and heavy rain", "Light fog", "Dry weather"],
+                correct: 1
+            },
+            {
+                question: "What are clouds made of?",
+                options: ["Cotton", "Smoke", "Tiny water droplets or ice crystals", "Dust only"],
+                correct: 2
+            },
+            {
+                question: "FOG is basically a cloud that:",
+                options: ["Is very high up", "Touches the ground", "Is always dark", "Only forms at night"],
+                correct: 1
+            },
+            {
+                question: "If you see big, dark clouds forming, you should expect:",
+                options: ["A sunny afternoon", "Rain or a storm", "Snow in summer", "Nothing to change"],
+                correct: 1
+            },
+            {
+                question: "Cirrus clouds are made mostly of:",
+                options: ["Water droplets", "Ice crystals", "Dust", "Smoke"],
+                correct: 1
+            },
+
+            // PRECIPITATION & WATER CYCLE (6 questions)
+            {
+                question: "Which is NOT a type of precipitation?",
+                options: ["Rain", "Snow", "Wind", "Hail"],
+                correct: 2
+            },
+            {
+                question: "HAIL is made of:",
+                options: ["Raindrops", "Balls of ice", "Snowflakes", "Fog"],
+                correct: 1
+            },
+            {
+                question: "In the water cycle, what is EVAPORATION?",
+                options: ["Water falling as rain", "Water turning into vapor and rising", "Clouds forming", "Water soaking into ground"],
+                correct: 1
+            },
+            {
+                question: "When water vapor cools and forms clouds, this is called:",
+                options: ["Evaporation", "Precipitation", "Condensation", "Collection"],
+                correct: 2
+            },
+            {
+                question: "SLEET is a mix of:",
+                options: ["Rain and sunshine", "Rain and ice pellets", "Snow and fog", "Hail and wind"],
+                correct: 1
+            },
+            {
+                question: "Where does the energy come from that powers the water cycle?",
+                options: ["The Moon", "The Sun", "The wind", "The ocean"],
+                correct: 1
+            },
+
+            // WEATHER VS CLIMATE & GENERAL (6 questions)
+            {
+                question: "What is the difference between WEATHER and CLIMATE?",
+                options: ["They mean the same thing", "Weather is daily, climate is the pattern over many years", "Climate is for today only", "Weather is only about rain"],
+                correct: 1
+            },
+            {
+                question: "A barometer shows dropping air pressure. What might happen?",
+                options: ["Sunny weather is coming", "A storm might be coming", "It will get very hot", "Nothing changes"],
+                correct: 1
+            },
+            {
+                question: "Alberta's climate is known for being:",
+                options: ["Tropical and wet", "Cold winters and warm summers", "Always rainy", "Desert-like all year"],
+                correct: 1
+            },
+            {
+                question: "What causes wind to blow?",
+                options: ["Trees moving", "Differences in air pressure", "Cars driving", "Birds flying"],
+                correct: 1
+            },
+            {
+                question: "HIGH air pressure usually brings:",
+                options: ["Storms and rain", "Clear, sunny weather", "Tornadoes", "Fog only"],
+                correct: 1
+            },
+            {
+                question: "Why do we check the weather forecast?",
+                options: ["Just for fun", "To plan activities and stay safe", "It's required by law", "To make it rain"],
+                correct: 1
+            }
+        ];
+
+        // Generate a randomized weather lesson with 5 questions
+        function generateWeatherLesson() {
+            const shuffled = shuffle([...weatherQuestionBank]);
+            const selectedQuestions = shuffled.slice(0, 5);
+            
+            return {
+                id: "science-weather-1",
+                title: "Weather Watch ⛅",
+                subject: "Science",
+                questions: selectedQuestions
+            };
+        }
+
+        // ===========================================
+        // ALL SCIENCE UNITS DATA (Alberta Grade 5 Curriculum - French Immersion)
+        // ===========================================
+        
+        const scienceUnits = {
+            // UNIT 1: La matière (Matter)
+            'matiere': {
+                id: "science-matiere",
+                title: "⚛️ La matière",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Selon le modèle particulaire, comment les particules sont-elles arrangées dans un solide?",
+                        options: ["Elles sont très éloignées et bougent librement", "Elles sont très proches les unes des autres et vibrent sur place", "Elles n'existent pas dans un solide", "Elles sont proches mais glissent les unes sur les autres"],
+                        correct: 1,
+                        explanation: "Dans un solide, les particules sont très rapprochées, bien organisées et vibrent sur place sans se déplacer librement."
+                    },
+                    {
+                        question: "Comment les particules se comportent-elles dans un liquide?",
+                        options: ["Elles sont fixes et ne bougent pas", "Elles sont très éloignées et bougent très vite", "Elles sont proches mais peuvent glisser les unes sur les autres", "Elles disparaissent"],
+                        correct: 2,
+                        explanation: "Dans un liquide, les particules sont proches mais pas aussi organisées que dans un solide. Elles peuvent glisser les unes sur les autres, ce qui permet au liquide de couler."
+                    },
+                    {
+                        question: "Comment les particules d'un gaz sont-elles arrangées selon le modèle particulaire?",
+                        options: ["Très proches et organisées en rangées", "Proches et glissantes", "Très éloignées les unes des autres et se déplacent rapidement dans toutes les directions", "Elles ne bougent pas du tout"],
+                        correct: 2,
+                        explanation: "Dans un gaz, les particules sont très éloignées les unes des autres et se déplacent rapidement dans toutes les directions."
+                    },
+                    {
+                        question: "Quel est l'effet des forces attractives sur les particules d'un solide?",
+                        options: ["Les forces attractives sont très faibles, les particules bougent librement", "Les forces attractives sont très fortes, gardant les particules ensemble et en place", "Il n'y a pas de forces attractives dans un solide", "Les forces repoussent les particules"],
+                        correct: 1,
+                        explanation: "Dans un solide, les forces attractives entre les particules sont très fortes, ce qui les maintient en place et donne au solide sa forme fixe."
+                    },
+                    {
+                        question: "Dans quel état de la matière les forces attractives entre les particules sont-elles les plus faibles?",
+                        options: ["Solide", "Liquide", "Gaz", "Les forces sont les mêmes dans tous les états"],
+                        correct: 2,
+                        explanation: "Dans un gaz, les forces attractives entre les particules sont les plus faibles, c'est pourquoi les particules sont très éloignées et se déplacent librement."
+                    },
+                    {
+                        question: "Quel instrument utilise-t-on pour mesurer la masse d'un objet en sciences?",
+                        options: ["Un thermomètre", "Un cylindre gradué", "Une balance", "Un mètre"],
+                        correct: 2,
+                        explanation: "On utilise une balance pour mesurer la masse des solides et des liquides."
+                    },
+                    {
+                        question: "Quelle est l'unité SI standard pour mesurer la masse?",
+                        options: ["Le litre (L)", "Le mètre (m)", "Le gramme (g) ou le kilogramme (kg)", "Le degré Celsius (°C)"],
+                        correct: 2,
+                        explanation: "L'unité SI pour la masse est le gramme (g) ou le kilogramme (kg)."
+                    },
+                    {
+                        question: "Quel instrument utilise-t-on pour mesurer le volume d'un liquide?",
+                        options: ["Une balance", "Un cylindre gradué", "Un thermomètre", "Un aimant"],
+                        correct: 1,
+                        explanation: "On utilise un cylindre gradué (ou éprouvette graduée) pour mesurer le volume des liquides."
+                    },
+                    {
+                        question: "Qu'est-ce que la densité?",
+                        options: ["La taille d'un objet", "La quantité de matière (masse) contenue dans un volume donné", "La température d'un objet", "La couleur d'un objet"],
+                        correct: 1,
+                        explanation: "La densité est la quantité de matière (masse) contenue dans un espace donné (volume). Un objet dense a beaucoup de masse dans un petit volume."
+                    },
+                    {
+                        question: "Deux cubes ont le même volume. Le cube A a une masse de 50 g et le cube B a une masse de 100 g. Lequel est le plus dense?",
+                        options: ["Le cube A", "Le cube B", "Ils ont la même densité", "On ne peut pas savoir"],
+                        correct: 1,
+                        explanation: "Le cube B est plus dense car il a plus de masse (100 g) dans le même volume que le cube A (50 g)."
+                    },
+                    {
+                        question: "Comment peut-on comparer directement la densité de deux liquides?",
+                        options: ["En les chauffant", "En les versant doucement ensemble et en observant lequel coule au fond", "En les goûtant", "En les pesant sans mesurer leur volume"],
+                        correct: 1,
+                        explanation: "Si on verse deux liquides ensemble, le liquide le plus dense coulera au fond, et le moins dense flottera sur le dessus."
+                    },
+                    {
+                        question: "Selon le modèle particulaire, pourquoi les gaz sont-ils moins denses que les solides?",
+                        options: ["Les gaz ont plus de particules", "Les particules de gaz sont plus grosses", "Les particules de gaz sont très éloignées les unes des autres, donc il y a moins de masse dans le même volume", "Les gaz n'ont pas de particules"],
+                        correct: 2,
+                        explanation: "Dans un gaz, les particules sont très espacées. Il y a donc moins de particules (moins de masse) dans un même volume, ce qui rend les gaz moins denses."
+                    },
+                    {
+                        question: "Qu'arrive-t-il quand on comprime (presse) de l'air dans une seringue fermée?",
+                        options: ["L'air ne peut pas être comprimé", "Le volume d'air diminue car les particules peuvent se rapprocher", "L'air se transforme en eau", "La seringue explose toujours"],
+                        correct: 1,
+                        explanation: "L'air est compressible car les particules de gaz sont très espacées. Quand on pousse le piston, les particules se rapprochent et le volume diminue."
+                    },
+                    {
+                        question: "L'eau est-elle facilement compressible?",
+                        options: ["Oui, l'eau se comprime facilement", "Non, l'eau est presque incompressible", "Oui, mais seulement quand elle est chaude", "Oui, mais seulement quand elle est froide"],
+                        correct: 1,
+                        explanation: "L'eau (un liquide) est presque incompressible car ses particules sont déjà très proches les unes des autres et ne peuvent pas être rapprochées davantage."
+                    },
+                    {
+                        question: "Pourquoi l'air est-il compressible mais pas l'eau?",
+                        options: ["L'eau est plus lourde", "L'air a beaucoup d'espace entre ses particules, l'eau non", "L'air n'a pas de particules", "L'eau est plus chaude"],
+                        correct: 1,
+                        explanation: "L'air (gaz) a beaucoup d'espace entre ses particules, ce qui permet de les rapprocher. L'eau (liquide) a des particules déjà très proches, donc on ne peut pas les comprimer davantage."
+                    },
+                    {
+                        question: "Que se passe-t-il avec les particules quand un solide fond et devient un liquide?",
+                        options: ["Les particules disparaissent", "Les particules restent les mêmes mais les forces attractives s'affaiblissent, permettant aux particules de glisser", "De nouvelles particules sont créées", "Les particules deviennent plus grosses"],
+                        correct: 1,
+                        explanation: "Quand un solide fond, les particules gagnent de l'énergie et les forces attractives s'affaiblissent. Les particules restent proches mais peuvent maintenant glisser les unes sur les autres."
+                    },
+                    {
+                        question: "Quelle règle de sécurité est importante lors de la mesure de la masse avec une balance?",
+                        options: ["Toujours porter des lunettes de soleil", "S'assurer que la balance est sur une surface plane et à zéro avant de commencer", "Secouer la balance avant de l'utiliser", "Toujours peser les liquides directement sur la balance sans contenant"],
+                        correct: 1,
+                        explanation: "Avant de mesurer, il faut s'assurer que la balance est sur une surface plane et calibrée à zéro pour obtenir une mesure précise."
+                    },
+                    {
+                        question: "Comment doit-on lire la mesure du volume dans un cylindre gradué?",
+                        options: ["En regardant par le dessus", "En plaçant les yeux au niveau du ménisque (le bas de la courbe du liquide)", "En devinant", "En regardant par le dessous"],
+                        correct: 1,
+                        explanation: "On doit placer les yeux au même niveau que le ménisque (la courbe au bas de la surface du liquide) pour lire la mesure correctement."
+                    },
+                    {
+                        question: "Un objet a une masse de 200 g et un volume de 100 mL. Un autre objet a une masse de 200 g et un volume de 50 mL. Lequel est le plus dense?",
+                        options: ["L'objet de 100 mL", "L'objet de 50 mL", "Ils ont la même densité", "On ne peut pas déterminer la densité"],
+                        correct: 1,
+                        explanation: "L'objet de 50 mL est plus dense car il a la même masse (200 g) dans un plus petit volume (50 mL vs 100 mL). Plus de masse dans moins d'espace = plus dense."
+                    },
+                    {
+                        question: "Quelle est l'unité SI pour mesurer le volume d'un liquide?",
+                        options: ["Le gramme (g)", "Le millilitre (mL) ou le litre (L)", "Le centimètre (cm)", "Le kilogramme (kg)"],
+                        correct: 1,
+                        explanation: "L'unité SI pour le volume d'un liquide est le millilitre (mL) ou le litre (L)."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 2: Énergie (Energy)
+            'energie': {
+                id: "science-energie",
+                title: "⚡ Énergie",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Quelles sont les quatre forces qui agissent sur un objet en vol?",
+                        options: ["Poussée, traînée, portance et poids", "Gravité, magnétisme, friction et électricité", "Vent, pluie, neige et soleil", "Vitesse, direction, distance et temps"],
+                        correct: 0,
+                        explanation: "Les quatre forces du vol sont: la poussée (vers l'avant), la traînée (vers l'arrière), la portance (vers le haut) et le poids/gravité (vers le bas)."
+                    },
+                    {
+                        question: "Qu'est-ce que la poussée (thrust)?",
+                        options: ["La force qui tire un objet vers le sol", "La force qui propulse un objet vers l'avant", "La force qui ralentit un objet", "La force qui soulève un objet"],
+                        correct: 1,
+                        explanation: "La poussée est la force qui propulse un objet vers l'avant dans l'air. Par exemple, un moteur d'avion crée la poussée."
+                    },
+                    {
+                        question: "Qu'est-ce que la traînée (drag)?",
+                        options: ["La force qui pousse vers l'avant", "La force de l'air qui résiste au mouvement et ralentit l'objet", "La force qui soulève l'objet", "La force de la gravité"],
+                        correct: 1,
+                        explanation: "La traînée est la force de résistance de l'air qui s'oppose au mouvement de l'objet et le ralentit. Elle agit dans la direction opposée à la poussée."
+                    },
+                    {
+                        question: "Qu'est-ce que la portance (lift)?",
+                        options: ["La force qui pousse un objet vers le bas", "La force vers le haut qui permet à un objet de s'élever dans l'air", "La force qui pousse un objet vers l'avant", "La force de friction"],
+                        correct: 1,
+                        explanation: "La portance est la force vers le haut créée par le mouvement de l'air autour des ailes. Pour voler, la portance doit être égale ou supérieure au poids."
+                    },
+                    {
+                        question: "Pour qu'un avion reste en vol, que doit-il se passer avec les forces?",
+                        options: ["La traînée doit être plus grande que la poussée", "Le poids doit être plus grand que la portance", "La portance doit être égale ou plus grande que le poids, et la poussée doit surmonter la traînée", "Toutes les forces doivent être éliminées"],
+                        correct: 2,
+                        explanation: "Pour voler: la portance ≥ poids (pour rester en l'air) et la poussée ≥ traînée (pour avancer)."
+                    },
+                    {
+                        question: "Comment un oiseau utilise-t-il les forces du vol?",
+                        options: ["Il utilise seulement la gravité", "Ses ailes créent la portance et la poussée en battant", "Il utilise un moteur comme un avion", "Il flotte dans l'air sans aucune force"],
+                        correct: 1,
+                        explanation: "Un oiseau bat des ailes pour créer à la fois la poussée (mouvement vers l'avant) et la portance (mouvement vers le haut). La forme de ses ailes aide aussi à créer la portance."
+                    },
+                    {
+                        question: "Quelle forme d'aile aide à créer la portance?",
+                        options: ["Plate et carrée", "Courbée sur le dessus et plus plate en dessous (profil aérodynamique)", "Ronde comme un ballon", "Triangulaire pointue"],
+                        correct: 1,
+                        explanation: "Un profil aérodynamique (courbé sur le dessus, plat en dessous) force l'air à voyager plus vite au-dessus de l'aile, créant une zone de basse pression qui génère la portance."
+                    },
+                    {
+                        question: "Qu'est-ce que la force de flottabilité (poussée d'Archimède)?",
+                        options: ["La force qui pousse un objet vers le fond de l'eau", "La force vers le haut exercée par un liquide sur un objet immergé", "La force de la gravité", "La force du vent sur l'eau"],
+                        correct: 1,
+                        explanation: "La force de flottabilité est la force vers le haut que l'eau (ou un autre fluide) exerce sur un objet placé dedans."
+                    },
+                    {
+                        question: "Quand est-ce qu'un objet flotte dans l'eau?",
+                        options: ["Quand son poids est plus grand que la force de flottabilité", "Quand la force de flottabilité est égale ou plus grande que son poids", "Quand il est très gros", "Quand il est de couleur claire"],
+                        correct: 1,
+                        explanation: "Un objet flotte quand la force de flottabilité (vers le haut) est égale ou supérieure à son poids (vers le bas)."
+                    },
+                    {
+                        question: "Pourquoi un bateau en acier peut-il flotter même si l'acier est plus dense que l'eau?",
+                        options: ["Parce que l'acier devient léger dans l'eau", "Parce que la forme creuse du bateau déplace un grand volume d'eau, créant assez de force de flottabilité", "Parce que le bateau a de la peinture spéciale", "Parce que l'eau de mer est magique"],
+                        correct: 1,
+                        explanation: "La forme creuse du bateau déplace un grand volume d'eau. L'eau déplacée crée une force de flottabilité suffisante pour supporter le poids du bateau."
+                    },
+                    {
+                        question: "Quelle est la différence entre une ressource énergétique renouvelable et non renouvelable?",
+                        options: ["Les renouvelables sont plus chères", "Les renouvelables se régénèrent naturellement, les non renouvelables s'épuisent", "Les non renouvelables sont meilleures pour l'environnement", "Il n'y a pas de différence"],
+                        correct: 1,
+                        explanation: "Les ressources renouvelables (soleil, vent, eau) se régénèrent naturellement. Les non renouvelables (pétrole, charbon, gaz naturel) existent en quantité limitée et mettent des millions d'années à se former."
+                    },
+                    {
+                        question: "Lequel de ces choix est une source d'énergie NON renouvelable?",
+                        options: ["L'énergie solaire", "L'énergie éolienne", "Le gaz naturel", "L'énergie hydroélectrique"],
+                        correct: 2,
+                        explanation: "Le gaz naturel est un combustible fossile non renouvelable. Il met des millions d'années à se former et existe en quantité limitée."
+                    },
+                    {
+                        question: "Lequel de ces choix est une source d'énergie renouvelable?",
+                        options: ["Le charbon", "Le pétrole", "L'énergie éolienne (du vent)", "Le gaz naturel"],
+                        correct: 2,
+                        explanation: "L'énergie éolienne est renouvelable car le vent est une ressource naturelle qui ne s'épuise pas."
+                    },
+                    {
+                        question: "Quel est un avantage des combustibles fossiles?",
+                        options: ["Ils ne polluent pas", "Ils produisent beaucoup d'énergie et sont fiables", "Ils sont renouvelables", "Ils ne produisent pas de gaz à effet de serre"],
+                        correct: 1,
+                        explanation: "Les combustibles fossiles produisent beaucoup d'énergie de façon fiable et constante. Cependant, ils polluent et ne sont pas renouvelables."
+                    },
+                    {
+                        question: "Quel est un inconvénient de l'énergie solaire?",
+                        options: ["Elle pollue beaucoup", "Elle ne fonctionne pas la nuit et dépend de la météo", "Elle est non renouvelable", "Elle n'existe pas au Canada"],
+                        correct: 1,
+                        explanation: "L'énergie solaire ne produit pas d'électricité la nuit et est moins efficace par temps nuageux. Elle dépend donc des conditions météorologiques."
+                    },
+                    {
+                        question: "Quelle est la principale source d'énergie utilisée en Alberta?",
+                        options: ["L'énergie nucléaire", "L'énergie solaire", "Les combustibles fossiles (pétrole et gaz naturel)", "L'énergie hydroélectrique"],
+                        correct: 2,
+                        explanation: "L'Alberta est une province riche en pétrole et gaz naturel. Les combustibles fossiles sont sa principale source d'énergie."
+                    },
+                    {
+                        question: "Quelle province du Canada utilise principalement l'énergie hydroélectrique?",
+                        options: ["L'Alberta", "La Saskatchewan", "Le Québec", "Le Manitoba"],
+                        correct: 2,
+                        explanation: "Le Québec produit la grande majorité de son électricité grâce à l'énergie hydroélectrique (barrages)."
+                    },
+                    {
+                        question: "Qu'est-ce que la biomasse comme source d'énergie?",
+                        options: ["L'énergie du vent", "L'énergie obtenue à partir de matières organiques (plantes, déchets, bois)", "L'énergie nucléaire", "L'énergie des vagues"],
+                        correct: 1,
+                        explanation: "La biomasse est l'énergie obtenue à partir de matières organiques comme le bois, les résidus agricoles et les déchets alimentaires."
+                    },
+                    {
+                        question: "Lors de la construction d'un appareil volant, quel facteur est important pour réduire la traînée?",
+                        options: ["Utiliser une forme large et plate", "Utiliser une forme aérodynamique (profilée)", "Rendre l'objet aussi lourd que possible", "Ajouter beaucoup de décorations"],
+                        correct: 1,
+                        explanation: "Une forme aérodynamique (profilée, lisse) réduit la traînée car l'air passe plus facilement autour de l'objet."
+                    },
+                    {
+                        question: "Un objet coule dans l'eau douce mais flotte dans l'eau salée. Pourquoi?",
+                        options: ["L'eau salée est plus chaude", "L'eau salée est plus dense que l'eau douce, donc la force de flottabilité est plus grande", "L'eau salée est plus légère", "L'objet change de masse dans l'eau salée"],
+                        correct: 1,
+                        explanation: "L'eau salée est plus dense que l'eau douce (à cause du sel dissous). Un fluide plus dense exerce une force de flottabilité plus grande, ce qui peut faire flotter un objet qui coulerait dans l'eau douce."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 3: Systèmes terrestres — Climat et météo
+            'climat': {
+                id: "science-climat",
+                title: "🌍 Climat et météo",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Quelle est la différence entre la météo et le climat?",
+                        options: ["La météo et le climat sont la même chose", "La météo décrit les conditions atmosphériques à court terme; le climat décrit les tendances sur une longue période (30+ ans)", "Le climat change chaque jour", "La météo ne change jamais"],
+                        correct: 1,
+                        explanation: "La météo décrit les conditions atmosphériques quotidiennes (température, pluie, vent). Le climat décrit les tendances moyennes sur de longues périodes (généralement 30 ans ou plus)."
+                    },
+                    {
+                        question: "Lequel est un exemple de météo et non de climat?",
+                        options: ["Les hivers en Alberta sont généralement froids", "Il pleut aujourd'hui à Calgary", "Le désert du Sahara est chaud et sec", "Vancouver reçoit beaucoup de pluie en moyenne"],
+                        correct: 1,
+                        explanation: "\"Il pleut aujourd'hui à Calgary\" décrit une condition atmosphérique spécifique et temporaire, c'est donc de la météo. Les autres options décrivent des tendances à long terme (climat)."
+                    },
+                    {
+                        question: "Quelles sont les principales zones climatiques de la Terre?",
+                        options: ["Jour et nuit", "Tropical, tempéré et polaire", "Chaud, moyen et froid", "Montagne, plaine et océan"],
+                        correct: 1,
+                        explanation: "Les trois principales zones climatiques sont: tropicale (proche de l'équateur, chaude), tempérée (entre les tropiques et les pôles) et polaire (près des pôles, froide)."
+                    },
+                    {
+                        question: "Dans quelle zone climatique se trouve l'Alberta?",
+                        options: ["Tropicale", "Tempérée / continentale", "Polaire", "Désertique"],
+                        correct: 1,
+                        explanation: "L'Alberta est dans la zone tempérée/continentale avec des hivers froids, des étés chauds et des variations saisonnières importantes."
+                    },
+                    {
+                        question: "Quel facteur influence le plus le climat d'une région?",
+                        options: ["La couleur du sol", "La latitude (distance de l'équateur)", "Le nombre d'animaux", "La couleur des maisons"],
+                        correct: 1,
+                        explanation: "La latitude est le facteur le plus important. Plus on est proche de l'équateur, plus il fait chaud; plus on s'en éloigne vers les pôles, plus il fait froid."
+                    },
+                    {
+                        question: "Comment l'altitude affecte-t-elle le climat?",
+                        options: ["Plus on monte en altitude, plus il fait chaud", "Plus on monte en altitude, plus il fait froid", "L'altitude n'a aucun effet sur le climat", "Plus on monte en altitude, plus il pleut toujours"],
+                        correct: 1,
+                        explanation: "La température diminue avec l'altitude. C'est pourquoi les sommets des montagnes sont couverts de neige même en été."
+                    },
+                    {
+                        question: "Comment la proximité d'un océan affecte-t-elle le climat?",
+                        options: ["Les régions côtières ont des températures plus extrêmes", "Les régions côtières ont des températures plus modérées (hivers plus doux, étés plus frais)", "L'océan n'a aucun effet sur le climat", "Les régions côtières sont toujours plus froides"],
+                        correct: 1,
+                        explanation: "L'eau se réchauffe et se refroidit plus lentement que la terre. Les régions côtières ont donc des températures plus modérées (hivers plus doux, étés plus frais) comparées aux régions intérieures."
+                    },
+                    {
+                        question: "Quel instrument mesure la température de l'air?",
+                        options: ["Le baromètre", "Le thermomètre", "L'anémomètre", "Le pluviomètre"],
+                        correct: 1,
+                        explanation: "Le thermomètre mesure la température de l'air, généralement en degrés Celsius (°C) au Canada."
+                    },
+                    {
+                        question: "Quel instrument mesure la pression atmosphérique?",
+                        options: ["Le thermomètre", "L'anémomètre", "Le baromètre", "L'hygromètre"],
+                        correct: 2,
+                        explanation: "Le baromètre mesure la pression atmosphérique. Une pression qui baisse peut indiquer l'arrivée de mauvais temps."
+                    },
+                    {
+                        question: "Quel instrument mesure la vitesse du vent?",
+                        options: ["La girouette", "L'anémomètre", "Le pluviomètre", "Le thermomètre"],
+                        correct: 1,
+                        explanation: "L'anémomètre mesure la vitesse du vent. La girouette mesure la direction du vent."
+                    },
+                    {
+                        question: "Quel instrument mesure la quantité de pluie tombée?",
+                        options: ["L'anémomètre", "Le baromètre", "Le pluviomètre", "L'hygromètre"],
+                        correct: 2,
+                        explanation: "Le pluviomètre recueille et mesure la quantité de pluie (précipitations) tombée sur une période donnée."
+                    },
+                    {
+                        question: "Quel instrument mesure la direction du vent?",
+                        options: ["L'anémomètre", "La girouette", "Le baromètre", "Le thermomètre"],
+                        correct: 1,
+                        explanation: "La girouette indique la direction d'où souffle le vent."
+                    },
+                    {
+                        question: "Quel instrument mesure l'humidité de l'air?",
+                        options: ["Le thermomètre", "L'hygromètre", "Le pluviomètre", "L'anémomètre"],
+                        correct: 1,
+                        explanation: "L'hygromètre mesure l'humidité (la quantité de vapeur d'eau) dans l'air."
+                    },
+                    {
+                        question: "Pourquoi les prévisions météorologiques sont-elles importantes?",
+                        options: ["Elles ne sont pas vraiment importantes", "Elles aident les gens à se préparer, assurent la sécurité et aident les agriculteurs à planifier", "Elles servent seulement à décider quoi porter", "Elles sont toujours exactes à 100%"],
+                        correct: 1,
+                        explanation: "Les prévisions météo aident à la sécurité publique (avertissements de tempêtes), aident les agriculteurs à planifier (semences, récoltes), et permettent aux gens de se préparer."
+                    },
+                    {
+                        question: "Comment les Premières Nations, les Métis et les Inuits prédisaient-ils traditionnellement la météo?",
+                        options: ["Avec des ordinateurs et des satellites", "En observant le comportement des animaux, les nuages, le vent et les signes naturels", "Ils ne prédisaient pas la météo", "En regardant la télévision"],
+                        correct: 1,
+                        explanation: "Les peuples autochtones utilisaient l'observation de la nature: le comportement des animaux, les formations nuageuses, la direction du vent et d'autres signes naturels pour prédire la météo."
+                    },
+                    {
+                        question: "Comment le climat de l'Alberta affecte-t-il l'agriculture?",
+                        options: ["Il permet de cultiver des fruits tropicaux toute l'année", "Les hivers longs et froids limitent la saison de croissance; les sécheresses et le gel sont des risques", "Il n'a aucun effet sur l'agriculture", "Il est trop chaud pour faire pousser quoi que ce soit"],
+                        correct: 1,
+                        explanation: "Le climat continental de l'Alberta avec ses hivers longs, le risque de gel tardif au printemps et les sécheresses estivales affecte quels types de cultures peuvent pousser et quand."
+                    },
+                    {
+                        question: "Qu'est-ce que l'agriculture de conservation?",
+                        options: ["Utiliser le plus de produits chimiques possible", "Des pratiques agricoles qui protègent le sol et l'eau, comme le semis direct et la rotation des cultures", "Construire des musées sur les fermes", "Ne rien cultiver"],
+                        correct: 1,
+                        explanation: "L'agriculture de conservation utilise des pratiques durables comme le semis direct (ne pas labourer), la rotation des cultures et la couverture du sol pour protéger les ressources naturelles."
+                    },
+                    {
+                        question: "Quel type de nuage est haut, mince et composé de cristaux de glace?",
+                        options: ["Cumulus", "Cumulonimbus", "Cirrus", "Stratus"],
+                        correct: 2,
+                        explanation: "Les cirrus sont des nuages hauts, minces et filamenteux, composés de cristaux de glace. Ils indiquent généralement du beau temps mais peuvent annoncer un changement."
+                    },
+                    {
+                        question: "Quel type de nuage est associé aux orages violents?",
+                        options: ["Cirrus", "Stratus", "Cumulonimbus", "Cumulus"],
+                        correct: 2,
+                        explanation: "Les cumulonimbus sont de très grands nuages verticaux associés aux orages, à la foudre, à la grêle et parfois aux tornades."
+                    },
+                    {
+                        question: "Comment le comportement des animaux peut-il aider à prédire la météo?",
+                        options: ["Les animaux peuvent parler et dire le temps qu'il fera", "Certains animaux changent de comportement avant une tempête (ex: les oiseaux volent bas, les grenouilles coassent plus)", "Les animaux ne réagissent pas à la météo", "Les animaux regardent les prévisions à la télé"],
+                        correct: 1,
+                        explanation: "De nombreux animaux sont sensibles aux changements de pression atmosphérique et d'humidité. Par exemple, les oiseaux volent plus bas avant une tempête et certains insectes deviennent plus actifs."
+                    },
+                    {
+                        question: "En comparant le climat de l'Alberta et celui de la Colombie-Britannique côtière, quelle différence importante y a-t-il?",
+                        options: ["Ils ont exactement le même climat", "La C.-B. côtière a des hivers plus doux et plus humides grâce à l'influence de l'océan Pacifique", "L'Alberta a des hivers plus doux", "La C.-B. côtière ne reçoit jamais de pluie"],
+                        correct: 1,
+                        explanation: "La côte de la C.-B. bénéficie de l'effet modérateur de l'océan Pacifique, ce qui lui donne des hivers plus doux et plus humides que l'Alberta, qui a un climat continental avec des hivers plus froids et secs."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une carte météorologique montre?",
+                        options: ["Seulement les routes et les villes", "Les conditions météorologiques actuelles ou prévues (fronts, pression, température, précipitations)", "Les magasins à proximité", "Les résultats sportifs"],
+                        correct: 1,
+                        explanation: "Une carte météorologique montre les conditions atmosphériques: systèmes de haute et basse pression, fronts chauds et froids, précipitations, températures et vent."
+                    },
+                    {
+                        question: "Qu'est-ce que la récolte durable signifie?",
+                        options: ["Récolter tout le plus vite possible", "Récolter de façon à ne pas épuiser les ressources pour les générations futures", "Ne jamais récolter", "Récolter seulement en hiver"],
+                        correct: 1,
+                        explanation: "La récolte durable signifie prélever des ressources naturelles à un rythme qui permet leur renouvellement, assurant leur disponibilité pour les générations futures."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 4: Systèmes vivants (Living Systems)
+            'systemes-vivants': {
+                id: "science-vivants",
+                title: "🫀 Systèmes vivants",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Quels sont les quatre principaux systèmes du corps humain étudiés en 5e année?",
+                        options: ["Solaire, lunaire, stellaire, planétaire", "Digestif, respiratoire, circulatoire et musculosquelettique", "Électrique, mécanique, chimique et nucléaire", "Animal, végétal, minéral et gazeux"],
+                        correct: 1,
+                        explanation: "Les quatre systèmes étudiés sont le système digestif, le système respiratoire, le système circulatoire et le système musculosquelettique."
+                    },
+                    {
+                        question: "Quel est le rôle principal du système digestif?",
+                        options: ["Transporter le sang", "Décomposer les aliments en nutriments que le corps peut utiliser", "Permettre de respirer", "Protéger les os"],
+                        correct: 1,
+                        explanation: "Le système digestif décompose les aliments en nutriments (énergie, vitamines, minéraux) que le corps peut absorber et utiliser."
+                    },
+                    {
+                        question: "Quel est le bon ordre du trajet des aliments dans le système digestif?",
+                        options: ["Bouche → estomac → œsophage → intestin grêle → gros intestin", "Bouche → œsophage → estomac → intestin grêle → gros intestin", "Estomac → bouche → intestin grêle → gros intestin → œsophage", "Bouche → intestin grêle → estomac → gros intestin → œsophage"],
+                        correct: 1,
+                        explanation: "Les aliments passent par: la bouche (mastication) → l'œsophage (tube vers l'estomac) → l'estomac (digestion acide) → l'intestin grêle (absorption) → le gros intestin (eau et déchets)."
+                    },
+                    {
+                        question: "Où la plupart des nutriments sont-ils absorbés dans le système digestif?",
+                        options: ["Dans la bouche", "Dans l'estomac", "Dans l'intestin grêle", "Dans le gros intestin"],
+                        correct: 2,
+                        explanation: "L'intestin grêle est l'endroit principal où les nutriments sont absorbés et passent dans le sang pour être distribués dans tout le corps."
+                    },
+                    {
+                        question: "Quel est le rôle principal du système respiratoire?",
+                        options: ["Digérer les aliments", "Apporter de l'oxygène au corps et éliminer le dioxyde de carbone", "Pomper le sang", "Bouger les muscles"],
+                        correct: 1,
+                        explanation: "Le système respiratoire apporte l'oxygène de l'air dans le corps et élimine le dioxyde de carbone (déchet) du corps."
+                    },
+                    {
+                        question: "Quels sont les organes principaux du système respiratoire?",
+                        options: ["Le cœur, les veines et les artères", "Le nez, la trachée, les bronches et les poumons", "L'estomac, les intestins et le foie", "Les os, les muscles et les tendons"],
+                        correct: 1,
+                        explanation: "Le système respiratoire comprend le nez/bouche, la trachée, les bronches et les poumons (où se fait l'échange de gaz)."
+                    },
+                    {
+                        question: "Que se passe-t-il dans les poumons?",
+                        options: ["Les aliments sont digérés", "L'échange gazeux: l'oxygène entre dans le sang et le dioxyde de carbone en sort", "Le sang est fabriqué", "Les os se forment"],
+                        correct: 1,
+                        explanation: "Dans les poumons, l'oxygène de l'air passe dans le sang (dans les alvéoles) et le dioxyde de carbone passe du sang à l'air pour être expiré."
+                    },
+                    {
+                        question: "Quel est le rôle principal du système circulatoire?",
+                        options: ["Respirer", "Transporter le sang, l'oxygène, les nutriments et les déchets à travers le corps", "Digérer les aliments", "Soutenir le corps"],
+                        correct: 1,
+                        explanation: "Le système circulatoire transporte le sang (qui contient l'oxygène, les nutriments et les déchets) à travers tout le corps."
+                    },
+                    {
+                        question: "Quels sont les organes principaux du système circulatoire?",
+                        options: ["Les poumons, la trachée et le nez", "Le cœur, le sang, les artères et les veines", "Le cerveau et la moelle épinière", "Les os et les muscles"],
+                        correct: 1,
+                        explanation: "Le système circulatoire comprend le cœur (pompe), le sang, les artères (transportent le sang du cœur) et les veines (ramènent le sang au cœur)."
+                    },
+                    {
+                        question: "Quel est le rôle du cœur?",
+                        options: ["Filtrer le sang", "Pomper le sang à travers tout le corps", "Fabriquer les globules rouges", "Stocker l'oxygène"],
+                        correct: 1,
+                        explanation: "Le cœur est un muscle qui agit comme une pompe, envoyant le sang riche en oxygène vers le corps et le sang pauvre en oxygène vers les poumons."
+                    },
+                    {
+                        question: "Quelle est la différence entre les artères et les veines?",
+                        options: ["Il n'y a pas de différence", "Les artères transportent le sang du cœur vers le corps; les veines ramènent le sang vers le cœur", "Les artères sont bleues et les veines sont rouges", "Les artères ne transportent que de l'eau"],
+                        correct: 1,
+                        explanation: "Les artères transportent le sang riche en oxygène du cœur vers le corps. Les veines ramènent le sang pauvre en oxygène du corps vers le cœur."
+                    },
+                    {
+                        question: "Qu'est-ce que le système musculosquelettique?",
+                        options: ["Le système qui digère les aliments", "Le système composé des os (squelette) et des muscles qui permettent le mouvement et le soutien", "Le système qui fait circuler le sang", "Le système qui contrôle les pensées"],
+                        correct: 1,
+                        explanation: "Le système musculosquelettique comprend les os (qui soutiennent et protègent) et les muscles (qui permettent le mouvement)."
+                    },
+                    {
+                        question: "Comment le système circulatoire et le système respiratoire travaillent-ils ensemble?",
+                        options: ["Ils ne travaillent pas ensemble", "Les poumons mettent l'oxygène dans le sang, et le cœur pompe ce sang riche en oxygène vers tout le corps", "Le cœur aide les poumons à digérer", "Les poumons pompent le sang"],
+                        correct: 1,
+                        explanation: "Le système respiratoire met l'oxygène dans le sang (dans les poumons). Le système circulatoire transporte ensuite ce sang riche en oxygène vers toutes les cellules du corps."
+                    },
+                    {
+                        question: "Comment le système digestif et le système circulatoire travaillent-ils ensemble?",
+                        options: ["Ils ne sont pas connectés", "Le système digestif décompose les aliments en nutriments, et le système circulatoire transporte ces nutriments vers les cellules du corps", "Le cœur aide à mâcher les aliments", "L'estomac pompe le sang"],
+                        correct: 1,
+                        explanation: "L'intestin grêle absorbe les nutriments des aliments digérés. Ces nutriments passent dans le sang, et le système circulatoire les distribue à toutes les cellules du corps."
+                    },
+                    {
+                        question: "Comment les plantes transportent-elles l'eau des racines vers les feuilles?",
+                        options: ["Par leurs fleurs", "Par des tubes appelés xylème", "L'eau ne se déplace pas dans les plantes", "Par leurs graines"],
+                        correct: 1,
+                        explanation: "Le xylème est un système de tubes dans les plantes qui transporte l'eau et les minéraux des racines vers les feuilles et les autres parties de la plante."
+                    },
+                    {
+                        question: "Comment les plantes transportent-elles les sucres (nourriture) des feuilles vers les autres parties?",
+                        options: ["Par le xylème", "Par des tubes appelés phloème", "Les plantes ne fabriquent pas de nourriture", "Par leurs racines seulement"],
+                        correct: 1,
+                        explanation: "Le phloème est le système de tubes qui transporte les sucres (produits par la photosynthèse dans les feuilles) vers toutes les autres parties de la plante."
+                    },
+                    {
+                        question: "Quel organe du corps humain élimine les déchets du sang?",
+                        options: ["Le cœur", "Les poumons", "Les reins", "L'estomac"],
+                        correct: 2,
+                        explanation: "Les reins filtrent le sang et éliminent les déchets sous forme d'urine."
+                    },
+                    {
+                        question: "Quel rôle jouent les os dans le corps humain?",
+                        options: ["Seulement permettre le mouvement", "Soutenir le corps, protéger les organes et produire des cellules sanguines", "Digérer les aliments", "Transporter l'oxygène"],
+                        correct: 1,
+                        explanation: "Les os soutiennent la structure du corps, protègent les organes vitaux (le crâne protège le cerveau, les côtes protègent le cœur et les poumons) et la moelle osseuse produit des cellules sanguines."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 5: Espace (Space)
+            'espace': {
+                id: "science-espace",
+                title: "🌌 Espace",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Qu'est-ce qui cause le jour et la nuit sur la Terre?",
+                        options: ["La Terre qui tourne autour du Soleil", "La rotation de la Terre sur son axe (un tour en ~24 heures)", "La Lune qui bloque le Soleil", "Le Soleil qui s'éteint la nuit"],
+                        correct: 1,
+                        explanation: "Le jour et la nuit sont causés par la rotation de la Terre sur son axe. La moitié de la Terre face au Soleil a le jour; l'autre moitié a la nuit."
+                    },
+                    {
+                        question: "Pourquoi avons-nous des saisons sur la Terre?",
+                        options: ["Parce que la Terre se rapproche et s'éloigne du Soleil", "Parce que l'axe de la Terre est incliné d'environ 23,5°", "Parce que le Soleil change de taille", "Parce que la Lune bloque la lumière du Soleil"],
+                        correct: 1,
+                        explanation: "L'inclinaison de l'axe de la Terre (23,5°) fait que différentes parties de la Terre reçoivent plus ou moins de lumière directe du Soleil au cours de l'année, créant les saisons."
+                    },
+                    {
+                        question: "Quand c'est l'été dans l'hémisphère nord, pourquoi les jours sont-ils plus longs?",
+                        options: ["La Terre tourne plus lentement", "L'hémisphère nord est incliné vers le Soleil, recevant plus d'heures de lumière", "Le Soleil brille plus fort", "La Lune est plus loin"],
+                        correct: 1,
+                        explanation: "En été, l'hémisphère nord est incliné vers le Soleil. Cela signifie plus d'heures d'ensoleillement (jours plus longs) et des rayons plus directs (plus chaud)."
+                    },
+                    {
+                        question: "Quelles sont les phases de la Lune?",
+                        options: ["Les changements de taille réelle de la Lune", "Les différentes apparences de la Lune vue de la Terre selon sa position par rapport au Soleil", "Les couleurs que la Lune prend", "Les moments où la Lune disparaît"],
+                        correct: 1,
+                        explanation: "Les phases de la Lune sont les différentes apparences de la partie illuminée de la Lune, selon sa position relative par rapport à la Terre et au Soleil."
+                    },
+                    {
+                        question: "Combien de temps dure un cycle complet des phases de la Lune?",
+                        options: ["Environ 7 jours", "Environ 29,5 jours", "Environ 365 jours", "Environ 24 heures"],
+                        correct: 1,
+                        explanation: "Un cycle lunaire complet (de nouvelle lune à nouvelle lune) dure environ 29,5 jours."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une éclipse solaire?",
+                        options: ["Quand la Terre bloque la lumière du Soleil sur la Lune", "Quand la Lune passe entre la Terre et le Soleil, bloquant la lumière du Soleil", "Quand le Soleil disparaît", "Quand deux planètes se rencontrent"],
+                        correct: 1,
+                        explanation: "Une éclipse solaire se produit quand la Lune passe entre la Terre et le Soleil, projetant une ombre sur la Terre et bloquant partiellement ou totalement la lumière du Soleil."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une éclipse lunaire?",
+                        options: ["Quand la Lune passe entre la Terre et le Soleil", "Quand la Terre passe entre le Soleil et la Lune, projetant son ombre sur la Lune", "Quand la Lune devient plus grosse", "Quand la Lune tourne sur elle-même"],
+                        correct: 1,
+                        explanation: "Une éclipse lunaire se produit quand la Terre se trouve entre le Soleil et la Lune, et l'ombre de la Terre est projetée sur la Lune."
+                    },
+                    {
+                        question: "Que sont les aurores boréales?",
+                        options: ["Des étoiles filantes", "Des lumières colorées dans le ciel causées par l'interaction de particules solaires avec l'atmosphère terrestre", "Des reflets de la Lune", "Des feux d'artifice naturels"],
+                        correct: 1,
+                        explanation: "Les aurores boréales sont des lumières colorées visibles dans le ciel nocturne, causées par des particules chargées du Soleil (vent solaire) qui interagissent avec les gaz de l'atmosphère terrestre."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une constellation?",
+                        options: ["Une planète", "Un groupe d'étoiles qui forme un motif reconnaissable dans le ciel nocturne", "Un satellite artificiel", "Un type de nuage"],
+                        correct: 1,
+                        explanation: "Une constellation est un groupe d'étoiles qui, vues de la Terre, semblent former un motif ou une figure reconnaissable (comme la Grande Ourse)."
+                    },
+                    {
+                        question: "Pourquoi les constellations visibles changent-elles selon les saisons?",
+                        options: ["Les étoiles se déplacent", "La Terre orbite autour du Soleil, donc notre vue du ciel nocturne change", "Les constellations disparaissent en été", "La Lune les cache"],
+                        correct: 1,
+                        explanation: "Au fil de l'année, la Terre se déplace autour du Soleil. Cela change la direction vers laquelle nous regardons la nuit, nous montrant différentes parties du ciel et différentes constellations."
+                    },
+                    {
+                        question: "Qu'est-ce que le «soleil de minuit»?",
+                        options: ["Une étoile qui brille à minuit", "Un phénomène où le Soleil reste visible 24 heures par jour dans les régions polaires en été", "Le Soleil qui est plus brillant la nuit", "Un type de Lune"],
+                        correct: 1,
+                        explanation: "Le soleil de minuit est un phénomène qui se produit dans les régions proches des pôles en été, où le Soleil ne se couche pas pendant 24 heures à cause de l'inclinaison de l'axe terrestre."
+                    },
+                    {
+                        question: "Comment les peuples autochtones utilisaient-ils l'observation des étoiles et des phénomènes astronomiques?",
+                        options: ["Ils ne regardaient jamais le ciel", "Pour déterminer les saisons, planifier l'agriculture, la chasse et les déplacements", "Seulement pour le divertissement", "Pour prédire les résultats de jeux"],
+                        correct: 1,
+                        explanation: "Les peuples autochtones observaient les étoiles, la Lune et les phénomènes astronomiques pour déterminer les saisons, planifier les périodes de plantation, de récolte, de chasse et de migration."
+                    },
+                    {
+                        question: "Combien de temps la Terre prend-elle pour faire un tour complet autour du Soleil?",
+                        options: ["24 heures", "30 jours", "Environ 365,25 jours (1 an)", "29,5 jours"],
+                        correct: 2,
+                        explanation: "La Terre prend environ 365,25 jours (une année) pour compléter une orbite autour du Soleil."
+                    },
+                    {
+                        question: "Quelle est la «nuit polaire»?",
+                        options: ["Une nuit très froide", "Un phénomène où le Soleil ne se lève pas pendant 24 heures dans les régions polaires en hiver", "Une éclipse qui dure toute la nuit", "Une nuit avec beaucoup d'étoiles"],
+                        correct: 1,
+                        explanation: "La nuit polaire est le phénomène opposé au soleil de minuit: dans les régions proches des pôles en hiver, le Soleil ne se lève pas pendant 24 heures ou plus."
+                    },
+                    {
+                        question: "Quelle phase de la Lune voit-on quand la Lune est complètement illuminée?",
+                        options: ["Nouvelle lune", "Premier quartier", "Pleine lune", "Dernier quartier"],
+                        correct: 2,
+                        explanation: "La pleine lune est la phase où la face entière de la Lune visible depuis la Terre est illuminée par le Soleil."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 6: Informatique (Computer Science)
+            'informatique': {
+                id: "science-informatique",
+                title: "💻 Informatique",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Qu'est-ce qu'un algorithme?",
+                        options: ["Un type d'ordinateur", "Une série d'étapes ordonnées pour résoudre un problème ou accomplir une tâche", "Un jeu vidéo", "Un câble d'ordinateur"],
+                        correct: 1,
+                        explanation: "Un algorithme est une suite d'instructions précises et ordonnées qui permettent de résoudre un problème ou d'accomplir une tâche."
+                    },
+                    {
+                        question: "Qu'est-ce qu'un bloc de code dans la programmation visuelle?",
+                        options: ["Un bloc de construction en plastique", "Une pièce de puzzle colorée qui représente une instruction informatique", "Un livre de codes", "Un mot de passe"],
+                        correct: 1,
+                        explanation: "Dans la programmation visuelle par blocs (comme Scratch), chaque bloc représente une instruction ou une commande. On assemble les blocs comme des pièces de puzzle pour créer un programme."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une boucle en programmation?",
+                        options: ["Une erreur dans le code", "Une instruction qui répète un ensemble de commandes un certain nombre de fois ou jusqu'à ce qu'une condition soit remplie", "Un câble circulaire", "Un type de fichier"],
+                        correct: 1,
+                        explanation: "Une boucle permet de répéter automatiquement un ensemble d'instructions. Par exemple, «répéter 5 fois: avancer de 10 pas» exécute l'action 5 fois sans avoir à l'écrire 5 fois."
+                    },
+                    {
+                        question: "Si un bloc de code dit «avancer de 10 pas» et est placé dans une boucle «répéter 4 fois», combien de pas au total le personnage fera-t-il?",
+                        options: ["10 pas", "14 pas", "40 pas", "4 pas"],
+                        correct: 2,
+                        explanation: "La boucle répète l'action 4 fois: 10 + 10 + 10 + 10 = 40 pas au total."
+                    },
+                    {
+                        question: "Qu'est-ce que le processus de conception (design process)?",
+                        options: ["Dessiner une image", "Un processus itératif: identifier un besoin, planifier, créer, tester, améliorer", "Copier le travail de quelqu'un d'autre", "Acheter un produit en magasin"],
+                        correct: 1,
+                        explanation: "Le processus de conception est un cycle: identifier un problème/besoin → planifier une solution → créer un prototype → tester → évaluer → améliorer → recommencer si nécessaire."
+                    },
+                    {
+                        question: "Qu'est-ce qu'un artéfact computationnel?",
+                        options: ["Un objet ancien trouvé par des archéologues", "Quelque chose créé par un humain en utilisant un ordinateur (programme, animation, site web, etc.)", "Un ordinateur cassé", "Un livre écrit à la main"],
+                        correct: 1,
+                        explanation: "Un artéfact computationnel est tout ce qui est créé à l'aide d'un ordinateur pour répondre à un besoin: un programme, une animation, un jeu, un site web, une simulation, etc."
+                    },
+                    {
+                        question: "Pourquoi est-il important de créer plusieurs versions (itérations) d'un artéfact?",
+                        options: ["Pour perdre du temps", "Pour améliorer le produit à chaque version en corrigeant les problèmes et en ajoutant des améliorations", "Ce n'est pas important", "Parce que le professeur l'exige"],
+                        correct: 1,
+                        explanation: "Chaque itération permet de tester, identifier les problèmes et améliorer l'artéfact. Rarement un premier essai est parfait — l'amélioration continue mène à un meilleur produit final."
+                    },
+                    {
+                        question: "Que se passera-t-il si on exécute ces blocs de code dans l'ordre: «avancer de 5 pas» puis «tourner à droite de 90 degrés»?",
+                        options: ["Le personnage avancera et tournera en même temps", "Le personnage avancera de 5 pas, puis tournera à droite", "Le personnage ne bougera pas", "Le personnage tournera d'abord puis avancera"],
+                        correct: 1,
+                        explanation: "Les blocs de code s'exécutent dans l'ordre (séquentiellement). D'abord le personnage avance de 5 pas, puis il tourne à droite de 90 degrés."
+                    },
+                    {
+                        question: "Comment la collaboration peut-elle améliorer un artéfact?",
+                        options: ["En ayant une seule personne qui fait tout", "En partageant différentes idées, perspectives et compétences pour trouver de meilleures solutions", "En copiant le travail des autres", "La collaboration n'aide pas"],
+                        correct: 1,
+                        explanation: "La collaboration permet de combiner différentes idées, perspectives et compétences. D'autres personnes peuvent voir des problèmes ou des améliorations que l'on n'aurait pas vus seul."
+                    },
+                    {
+                        question: "Pour dessiner un carré avec un programme par blocs, quel algorithme utiliserais-tu?",
+                        options: ["Avancer, tourner 45°, répéter 8 fois", "Avancer, tourner 90°, répéter 4 fois", "Avancer, tourner 60°, répéter 6 fois", "Avancer, tourner 180°, répéter 2 fois"],
+                        correct: 1,
+                        explanation: "Un carré a 4 côtés et 4 angles de 90°. L'algorithme est: répéter 4 fois (avancer + tourner de 90°)."
+                    }
+                ],
+                xpPerQuestion: 5
+            },
+
+            // UNIT 7: Méthodes scientifiques (Scientific Methods)
+            'methodes': {
+                id: "science-methodes",
+                title: "🔬 Méthodes scientifiques",
+                subject: "Science",
+                questions: [
+                    {
+                        question: "Quelles sont les étapes de la méthode scientifique dans le bon ordre?",
+                        options: ["Conclure → Observer → Expérimenter → Questionner", "Observer/Questionner → Formuler une hypothèse → Expérimenter → Analyser les résultats → Conclure", "Expérimenter → Observer → Conclure → Questionner", "Hypothèse → Conclure → Observer → Expérimenter"],
+                        correct: 1,
+                        explanation: "La méthode scientifique suit ces étapes: 1) Observer et poser une question 2) Formuler une hypothèse 3) Planifier et réaliser une expérience 4) Recueillir et analyser les données 5) Tirer une conclusion."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une expérience contrôlée?",
+                        options: ["Une expérience où on change tout en même temps", "Une expérience où on change une seule variable à la fois et garde tout le reste pareil", "Une expérience sans matériel", "Une expérience faite par un adulte seulement"],
+                        correct: 1,
+                        explanation: "Dans une expérience contrôlée, on ne change qu'une seule variable (la variable manipulée) et on garde toutes les autres conditions identiques pour que le test soit juste."
+                    },
+                    {
+                        question: "Qu'est-ce que la variable manipulée (indépendante)?",
+                        options: ["Ce que tu mesures à la fin de l'expérience", "Ce que tu changes intentionnellement dans l'expérience", "Ce que tu gardes pareil", "Le titre de l'expérience"],
+                        correct: 1,
+                        explanation: "La variable manipulée (indépendante) est le facteur que le scientifique change intentionnellement pour observer son effet."
+                    },
+                    {
+                        question: "Qu'est-ce que la variable répondante (dépendante)?",
+                        options: ["Ce que tu changes dans l'expérience", "Ce que tu observes ou mesures comme résultat de l'expérience", "Ce que tu gardes pareil", "L'hypothèse"],
+                        correct: 1,
+                        explanation: "La variable répondante (dépendante) est ce que tu observes ou mesures. Elle «répond» aux changements de la variable manipulée."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une variable contrôlée?",
+                        options: ["La variable que tu changes", "La variable que tu mesures", "Tous les facteurs que tu gardes les mêmes pendant l'expérience pour que le test soit juste", "Le résultat final"],
+                        correct: 2,
+                        explanation: "Les variables contrôlées sont tous les facteurs que tu gardes identiques pendant l'expérience. Cela assure que seul le changement de la variable manipulée affecte les résultats."
+                    },
+                    {
+                        question: "Dans une expérience sur la croissance des plantes, tu changes la quantité de lumière. Quelle est la variable manipulée?",
+                        options: ["La croissance de la plante", "La quantité d'eau", "La quantité de lumière", "Le type de sol"],
+                        correct: 2,
+                        explanation: "La quantité de lumière est la variable manipulée car c'est ce que tu changes intentionnellement. La croissance de la plante serait la variable répondante."
+                    },
+                    {
+                        question: "Qu'est-ce qu'un biais dans une investigation scientifique?",
+                        options: ["Un résultat correct", "Une préférence ou un préjugé qui peut influencer les résultats de manière injuste", "Un type d'instrument", "Une hypothèse"],
+                        correct: 1,
+                        explanation: "Un biais est une préférence, un préjugé ou une erreur systématique qui peut fausser les résultats d'une investigation. Les scientifiques doivent identifier et minimiser les biais."
+                    },
+                    {
+                        question: "Donne un exemple de biais dans une expérience.",
+                        options: ["Utiliser le même instrument pour toutes les mesures", "Ne mesurer que les résultats qui confirment ton hypothèse et ignorer les autres", "Répéter l'expérience plusieurs fois", "Enregistrer tous les résultats avec précision"],
+                        correct: 1,
+                        explanation: "Ignorer les résultats qui ne confirment pas ton hypothèse est un biais de confirmation. Un bon scientifique enregistre TOUS les résultats, même ceux qui contredisent son hypothèse."
+                    },
+                    {
+                        question: "Pourquoi l'éthique est-elle importante en science?",
+                        options: ["Elle n'est pas importante", "Pour s'assurer que la recherche est honnête, juste, respectueuse et ne cause pas de tort", "Pour rendre les expériences plus difficiles", "Pour que les scientifiques gagnent plus d'argent"],
+                        correct: 1,
+                        explanation: "L'éthique scientifique assure que la recherche est conduite de manière honnête (pas de falsification), respectueuse (envers les êtres vivants), et que les résultats sont rapportés avec précision."
+                    },
+                    {
+                        question: "Quel est un exemple d'éthique scientifique en classe?",
+                        options: ["Copier les résultats d'un autre élève", "Enregistrer honnêtement tous les résultats, même s'ils ne correspondent pas à l'hypothèse", "Changer les données pour avoir une meilleure note", "Ignorer les consignes de sécurité"],
+                        correct: 1,
+                        explanation: "L'éthique scientifique inclut l'honnêteté: enregistrer tous les résultats fidèlement, ne pas inventer ou modifier des données, et traiter le matériel et les êtres vivants avec respect."
+                    },
+                    {
+                        question: "Pourquoi est-il important de représenter les données de différentes façons (graphiques, tableaux, diagrammes)?",
+                        options: ["Pour rendre le travail plus joli", "Différentes représentations aident à communiquer les résultats clairement et à voir des tendances", "Ce n'est pas important", "Parce que le professeur l'exige"],
+                        correct: 1,
+                        explanation: "Différentes représentations (graphiques à barres, diagrammes circulaires, tableaux) permettent de mieux voir les tendances dans les données et de communiquer les résultats de manière claire."
+                    },
+                    {
+                        question: "Quelles technologies aident les scientifiques à observer ce que les sens humains ne peuvent pas détecter?",
+                        options: ["Des crayons et du papier", "Des microscopes, télescopes, capteurs et satellites", "Des livres de cuisine", "Des instruments de musique"],
+                        correct: 1,
+                        explanation: "Les microscopes permettent de voir de très petits objets, les télescopes de voir des objets éloignés dans l'espace, les capteurs de détecter des changements invisibles, et les satellites de surveiller la Terre depuis l'espace."
+                    },
+                    {
+                        question: "Que signifie «défendre une conclusion» en science?",
+                        options: ["Se battre avec un autre scientifique", "Expliquer pourquoi ta conclusion est soutenue par les preuves de ton expérience", "Cacher ta conclusion", "Changer ta conclusion pour qu'elle plaise aux autres"],
+                        correct: 1,
+                        explanation: "Défendre une conclusion signifie expliquer et justifier ta conclusion en utilisant les données et les preuves recueillies pendant l'expérience."
+                    },
+                    {
+                        question: "Que pourrait-il arriver si les preuves scientifiques ne sont pas communiquées clairement?",
+                        options: ["Rien de grave", "Les gens pourraient mal interpréter les résultats et prendre de mauvaises décisions", "Les scientifiques gagneraient plus d'argent", "L'expérience serait automatiquement réussie"],
+                        correct: 1,
+                        explanation: "Si les preuves ne sont pas communiquées clairement et précisément, les gens pourraient mal comprendre les résultats, ce qui pourrait mener à de mauvaises décisions en santé, environnement, etc."
+                    },
+                    {
+                        question: "Qu'est-ce qu'une hypothèse?",
+                        options: ["Un fait prouvé", "Une prédiction testable qui propose une explication possible", "Le résultat final d'une expérience", "Une question sans réponse"],
+                        correct: 1,
+                        explanation: "Une hypothèse est une prédiction testable, souvent formulée sous la forme «Si... alors... parce que...». Elle propose une explication qui peut être vérifiée par une expérience."
+                    }
+                ],
+                xpPerQuestion: 5
+            }
+        };
+
+        // Currently selected science unit
+        let selectedScienceUnit = 'matiere';
+
+        // Get science lesson by unit
+        function getScienceLesson(unitId) {
+            return scienceUnits[unitId];
+        }
+
+        // Generate speedrun science lesson (10 questions from all units)
+        function generateSpeedrunScienceLesson() {
+            const allQuestions = [];
+            Object.values(scienceUnits).forEach(unit => {
+                allQuestions.push(...unit.questions);
+            });
+            const shuffled = shuffle([...allQuestions]);
+            return {
+                id: "speedrun-science",
+                title: "⚡ Speed Science",
+                subject: "Science",
+                questions: shuffled.slice(0, SPEEDRUN_QUESTIONS)
+            };
+        }
+
+        // ===========================================
+        // GAME MODE SYSTEM
+        // ===========================================
+        
+        // Mode state variables
+        let currentMode = 'learn';          // 'learn', 'speedrun', 'fun', 'challenge'
+        let pendingSubject = null;          // 'math' or 'science'
+        let currentLessonData = null;       // Store current lesson
+        
+        // Speedrun variables
+        let timerInterval = null;
+        let timerStartTime = null;
+        let finalTime = 0;
+        let speedrunTimeLeft = 10;       // Countdown starts at 10 seconds
+        let speedrunQuestionNum = 0;     // Track which question we're on
+        const SPEEDRUN_QUESTIONS = 10;   // 10 questions in speedrun
+        
+        // Challenge variables
+        let livesRemaining = 3;
+        const MAX_LIVES = 3;
+        
+        // Fun mode messages
+        const celebrationEmojis = ['🎉', '🎊', '⭐', '🔥', '💪', '🌟', '🚀', '🎯'];
+        const celebrationMessages = [
+            'Amazing!', 'You\'re on fire!', 'Brilliant!', 'Keep it up!',
+            'Fantastic!', 'Super smart!', 'Wow!', 'Nailed it!', 'Perfect!'
+        ];
+        
+        // Mode badge labels
+        const modeBadges = {
+            learn: '📚 Learn',
+            speedrun: '⏱️ Speed',
+            fun: '🎉 Fun',
+            challenge: '💪 Challenge'
+        };
+
+        // ===========================================
         // SCREEN NAVIGATION
         // ===========================================
         
-        function startLesson() {
-            // Hide menu, show lesson
+        // Show subject selection screen
+        function showSubjectSelection() {
             document.getElementById('main-menu').classList.add('hidden');
+            document.getElementById('subject-screen').classList.remove('hidden');
+        }
+
+        // Select subject and show mode selection (for Math)
+        function selectSubject(subject) {
+            pendingSubject = subject;
+            document.getElementById('subject-screen').classList.add('hidden');
+            document.getElementById('mode-screen').classList.remove('hidden');
+        }
+
+        // Show Science units selection
+        function showScienceUnits() {
+            document.getElementById('subject-screen').classList.add('hidden');
+            document.getElementById('science-units-screen').classList.remove('hidden');
+        }
+
+        // Select a Science unit and go to mode selection
+        function selectScienceUnit(unitId) {
+            pendingSubject = 'science';
+            selectedScienceUnit = unitId;
+            document.getElementById('science-units-screen').classList.add('hidden');
+            document.getElementById('mode-screen').classList.remove('hidden');
+        }
+
+        // Go back from science units to subjects
+        function backToSubjectsFromUnits() {
+            document.getElementById('science-units-screen').classList.add('hidden');
+            document.getElementById('subject-screen').classList.remove('hidden');
+        }
+
+        // Start the lesson with selected mode
+        function startMode(mode) {
+            currentMode = mode;
+            
+            // Generate lesson data based on subject and mode
+            if (currentMode === 'speedrun') {
+                // Speedrun always has 10 questions
+                if (pendingSubject === 'math') {
+                    currentLessonData = generateSpeedrunMathLesson();
+                } else {
+                    currentLessonData = generateSpeedrunScienceLesson();
+                }
+            } else if (pendingSubject === 'math') {
+                currentLessonData = generateMathLesson();
+            } else {
+                // Get the selected science unit
+                currentLessonData = getScienceLesson(selectedScienceUnit);
+            }
+            
+            // Reset mode-specific states
+            resetModeState();
+            
+            // Show lesson screen
+            document.getElementById('mode-screen').classList.add('hidden');
             document.getElementById('lesson-screen').classList.remove('hidden');
             document.getElementById('question-card').classList.remove('hidden');
             document.getElementById('completion-card').classList.add('hidden');
+            document.getElementById('gameover-card').classList.add('hidden');
             
-            // Update lesson screen stats
+            // Setup mode-specific UI
+            setupModeUI();
+            
+            // Start the lesson
+            document.getElementById('lesson-title').textContent = currentLessonData.title;
             updateLessonStats();
+            initLesson(currentLessonData);
             
-            // Generate and start lesson
-            const lessonData = generateLessonData();
-            initLesson(lessonData);
+            // Start timer if speedrun
+            if (currentMode === 'speedrun') {
+                startTimer();
+            }
+        }
+        
+        // Reset mode-specific state
+        function resetModeState() {
+            // Reset timer
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            timerStartTime = null;
+            finalTime = 0;
+            
+            // Reset speedrun
+            speedrunTimeLeft = 10;
+            speedrunQuestionNum = 0;
+            
+            // Reset lives
+            livesRemaining = MAX_LIVES;
+        }
+        
+        // Setup UI elements based on current mode
+        function setupModeUI() {
+            const timerDisplay = document.getElementById('timer-display');
+            const livesDisplay = document.getElementById('lives-display');
+            const modeBadge = document.getElementById('mode-badge');
+            
+            // Hide all mode-specific elements first
+            timerDisplay.classList.add('hidden');
+            livesDisplay.classList.add('hidden');
+            
+            // Set mode badge
+            modeBadge.textContent = modeBadges[currentMode];
+            
+            // Show mode-specific elements
+            if (currentMode === 'speedrun') {
+                timerDisplay.classList.remove('hidden');
+                document.getElementById('timer-value').textContent = '10.0s';
+            } else if (currentMode === 'challenge') {
+                livesDisplay.classList.remove('hidden');
+                updateLivesDisplay();
+            }
         }
 
-        function returnToMenu() {
-            // Hide lesson, show menu
+        // Go back to subject selection (or science units)
+        function backToSubjects() {
+            stopTimer();
+            document.getElementById('mode-screen').classList.add('hidden');
             document.getElementById('lesson-screen').classList.add('hidden');
+            // If science, go back to science units
+            if (pendingSubject === 'science') {
+                document.getElementById('science-units-screen').classList.remove('hidden');
+            } else {
+                document.getElementById('subject-screen').classList.remove('hidden');
+            }
+        }
+        
+        // Go back to mode selection
+        function backToModes() {
+            stopTimer();
+            document.getElementById('lesson-screen').classList.add('hidden');
+            document.getElementById('mode-screen').classList.remove('hidden');
+        }
+
+        // Return to main menu
+        function returnToMenu() {
+            stopTimer();
+            document.getElementById('lesson-screen').classList.add('hidden');
+            document.getElementById('subject-screen').classList.add('hidden');
+            document.getElementById('science-units-screen').classList.add('hidden');
+            document.getElementById('mode-screen').classList.add('hidden');
             document.getElementById('main-menu').classList.remove('hidden');
-            
-            // Update main menu stats
             updateStatsDisplay();
         }
 
+        // ===========================================
+        // SPEEDRUN MODE - Countdown Timer
+        // ===========================================
+        
+        // Generate 10-question math lesson for speedrun
+        function generateSpeedrunMathLesson() {
+            const questions = [];
+            for (let i = 0; i < SPEEDRUN_QUESTIONS; i++) {
+                questions.push(generateQuestion());
+            }
+            return {
+                id: "speedrun-math",
+                title: "⚡ Speed Math",
+                subject: "Math",
+                questions: questions
+            };
+        }
+        
+        // Generate 10-question weather lesson for speedrun
+        function generateSpeedrunWeatherLesson() {
+            const shuffled = shuffle([...weatherQuestionBank]);
+            return {
+                id: "speedrun-weather",
+                title: "⚡ Speed Science",
+                subject: "Science",
+                questions: shuffled.slice(0, SPEEDRUN_QUESTIONS)
+            };
+        }
+        
+        function startTimer() {
+            speedrunQuestionNum = 0;
+            speedrunTimeLeft = 10; // First question: 10 seconds
+            timerStartTime = Date.now();
+            timerInterval = setInterval(updateCountdown, 100);
+        }
+        
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            return speedrunQuestionNum; // Return how many questions answered
+        }
+        
+        function updateCountdown() {
+            if (timerStartTime) {
+                const elapsed = (Date.now() - timerStartTime) / 1000;
+                const remaining = speedrunTimeLeft - elapsed;
+                
+                if (remaining <= 0) {
+                    // Time's up!
+                    document.getElementById('timer-value').textContent = '0.0s';
+                    stopTimer();
+                    showSpeedrunTimeOut();
+                } else {
+                    document.getElementById('timer-value').textContent = remaining.toFixed(1) + 's';
+                    
+                    // Flash red when low on time
+                    const timerEl = document.getElementById('timer-display');
+                    if (remaining <= 3) {
+                        timerEl.classList.add('timer-danger');
+                    } else {
+                        timerEl.classList.remove('timer-danger');
+                    }
+                }
+            }
+        }
+        
+        // Called when moving to next question in speedrun
+        function nextSpeedrunQuestion() {
+            speedrunQuestionNum++;
+            speedrunTimeLeft = Math.max(1, 10 - speedrunQuestionNum); // 10, 9, 8... min 1 second
+            timerStartTime = Date.now(); // Reset timer for new question
+            document.getElementById('timer-display').classList.remove('timer-danger');
+        }
+        
+        function showSpeedrunTimeOut() {
+            document.getElementById('question-card').classList.add('hidden');
+            document.getElementById('gameover-card').classList.remove('hidden');
+            document.getElementById('gameover-card').querySelector('h2').textContent = "Time's Up!";
+            document.getElementById('gameover-card').querySelector('.icon').textContent = '⏰';
+            document.getElementById('gameover-score').textContent = 
+                `You answered ${correctAnswers} of ${speedrunQuestionNum + 1} questions`;
+            document.querySelector('.gameover-message').textContent = 'You ran out of time!';
+        }
+        
+        function calculateSpeedBonus(questionsCompleted) {
+            // Bonus for completing all 10 questions
+            if (questionsCompleted >= 10) return 15;
+            if (questionsCompleted >= 7) return 10;
+            if (questionsCompleted >= 5) return 5;
+            return 0;
+        }
+
+        // ===========================================
+        // CHALLENGE MODE - Lives
+        // ===========================================
+        
+        function updateLivesDisplay() {
+            const hearts = '❤️'.repeat(livesRemaining) + '💔'.repeat(MAX_LIVES - livesRemaining);
+            document.getElementById('lives-hearts').textContent = hearts;
+        }
+        
+        function loseLife() {
+            livesRemaining--;
+            updateLivesDisplay();
+            
+            // Shake animation
+            const heartsEl = document.getElementById('lives-hearts');
+            heartsEl.classList.add('shake');
+            setTimeout(() => heartsEl.classList.remove('shake'), 500);
+            
+            return livesRemaining > 0;
+        }
+        
+        function calculateChallengeBonus(lives) {
+            if (lives === 3) return 15;
+            if (lives === 2) return 10;
+            if (lives === 1) return 5;
+            return 0;
+        }
+        
+        function showGameOver() {
+            document.getElementById('question-card').classList.add('hidden');
+            document.getElementById('gameover-card').classList.remove('hidden');
+            document.getElementById('gameover-score').textContent = 
+                `You answered ${correctAnswers} question${correctAnswers !== 1 ? 's' : ''} correctly`;
+        }
+
+        // ===========================================
+        // FUN MODE - Celebrations
+        // ===========================================
+        
+        function showCelebration() {
+            const container = document.getElementById('celebration-container');
+            const emojiEl = document.getElementById('celebration-emoji');
+            const messageEl = document.getElementById('celebration-message');
+            
+            // Random emoji and message
+            const emoji = celebrationEmojis[Math.floor(Math.random() * celebrationEmojis.length)];
+            const message = celebrationMessages[Math.floor(Math.random() * celebrationMessages.length)];
+            
+            emojiEl.textContent = emoji;
+            messageEl.textContent = message;
+            
+            // Show celebration
+            container.classList.remove('hidden');
+            
+            // Spawn confetti
+            spawnConfetti();
+            
+            // Hide after animation
+            setTimeout(() => {
+                container.classList.add('hidden');
+            }, 1000);
+        }
+        
+        function spawnConfetti() {
+            const colors = ['#7C3AED', '#EC4899', '#F59E0B', '#22C55E', '#3B82F6', '#EF4444'];
+            
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => confetti.remove(), 1500);
+            }
+        }
+        
+        function showWrongAnimation() {
+            document.querySelector('.question-card').classList.add('shake-screen');
+            setTimeout(() => {
+                document.querySelector('.question-card').classList.remove('shake-screen');
+            }, 400);
+        }
+
+        // ===========================================
+        // LESSON STATS
+        // ===========================================
+        
         // Update stats display on lesson screen
         function updateLessonStats() {
             const xp = getXP();
@@ -296,6 +1874,67 @@
             updateLessonStats();
             return result;
         };
+
+        // ===========================================
+        // THEME SYSTEM
+        // ===========================================
+        
+        // Toggle theme popup menu
+        function toggleThemeMenu() {
+            const popup = document.getElementById('theme-popup');
+            popup.classList.toggle('hidden');
+        }
+
+        // Set theme and save to localStorage
+        function setTheme(themeName) {
+            // Remove all theme classes
+            document.body.classList.remove('normal', 'japanese', 'basic', 'dark', 'car', 'retro');
+            
+            // Add new theme class (normal has no class)
+            if (themeName !== 'normal') {
+                document.body.classList.add(themeName);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('theme', themeName);
+            
+            // Close popup
+            toggleThemeMenu();
+            
+            // Update active state
+            updateThemeButtons(themeName);
+        }
+
+        // Update which theme button looks active
+        function updateThemeButtons(activeTheme) {
+            document.querySelectorAll('.theme-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.querySelector(`[onclick="setTheme('${activeTheme}')"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        // Load saved theme on page load
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'normal';
+            document.body.classList.remove('normal', 'japanese', 'basic', 'dark', 'car', 'retro');
+            if (savedTheme !== 'normal') {
+                document.body.classList.add(savedTheme);
+            }
+            updateThemeButtons(savedTheme);
+        }
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', loadSavedTheme);
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function(e) {
+            const popup = document.getElementById('theme-popup');
+            const themeBtn = document.querySelector('.theme-btn');
+            if (!popup.contains(e.target) && !themeBtn.contains(e.target)) {
+                popup.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
